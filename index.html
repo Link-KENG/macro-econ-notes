@@ -1,0 +1,1941 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宏观经济学考点全覆盖 · 西方经济学（第二版）下册 第九—十四章</title>
+<style>
+:root{
+  --bg:#0d1117; --panel:#151a22; --panel2:#1b222c; --line:#2b3441;
+  --tx:#e6edf3; --tx2:#a9b4c2; --tx3:#7d8896;
+  --blue:#58a6ff; --cyan:#39d0d8; --green:#7ee787; --yellow:#ffd166;
+  --orange:#ffa657; --red:#ff7b72; --purple:#bc8cff; --pink:#ff9bce;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);
+  font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",-apple-system,Segoe UI,sans-serif;
+  line-height:1.75;font-size:16px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px 80px}
+a{color:var(--blue);text-decoration:none}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+
+/* 顶栏 */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.94);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:10px 0}
+.topbar .wrap{padding-bottom:0}
+.tb-title{font-size:14px;color:var(--tx3);margin-bottom:6px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font-size:13px;padding:5px 12px;border:1px solid var(--line);border-radius:999px;
+  color:var(--tx2);background:var(--panel);transition:.15s;white-space:nowrap}
+.chip:hover{border-color:var(--blue);color:var(--blue)}
+.chip.acc{background:linear-gradient(90deg,rgba(88,166,255,.15),rgba(57,208,216,.12));border-color:var(--blue);color:#cfe6ff}
+
+/* 扉页 */
+.hero{padding:44px 0 28px}
+.hero h1{font-size:30px;margin:0 0 10px;letter-spacing:.5px}
+.hero h1 span{background:linear-gradient(90deg,var(--blue),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--tx2);margin:6px 0;font-size:15px}
+.hero .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.tag{font-size:12.5px;padding:4px 10px;border-radius:6px;background:var(--panel2);color:var(--tx2);border:1px solid var(--line)}
+.tag b{color:var(--cyan);font-weight:600}
+
+/* 章 */
+.chapter{margin-top:46px;scroll-margin-top:80px}
+.ch-head{border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:10px;
+  background:linear-gradient(135deg,var(--panel) 0%,rgba(21,26,34,.4) 100%);padding:18px 20px}
+.ch-head h2{margin:0;font-size:22px;letter-spacing:.5px}
+.ch-head h2 em{font-style:normal;color:var(--blue);font-size:15px;margin-right:8px}
+.ch-head .oneline{margin:10px 0 0;color:var(--tx2);font-size:14.5px}
+.ch-head .oneline b{color:var(--yellow)}
+.map{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.map span{font-size:12.5px;background:var(--panel2);border:1px solid var(--line);color:var(--tx2);padding:3px 9px;border-radius:6px}
+.sec-h{display:flex;align-items:center;gap:10px;margin:32px 0 14px}
+.sec-h h3{margin:0;font-size:18px}
+.sec-h .bar{width:4px;height:18px;background:var(--cyan);border-radius:2px}
+.sec-h .cnt{font-size:12.5px;color:var(--tx3)}
+
+/* 考点卡 */
+.kp{border:1px solid var(--line);border-radius:10px;background:var(--panel);margin-bottom:14px;overflow:hidden}
+.kp>.kh{display:flex;align-items:baseline;gap:10px;padding:13px 18px;background:var(--panel2);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.kp>.kh .no{font-size:12px;color:var(--bg);background:var(--blue);border-radius:5px;padding:2px 7px;font-weight:700}
+.kp>.kh .nm{font-size:16.5px;font-weight:600}
+.kp>.kh .lv{font-size:12px;color:var(--orange);letter-spacing:1px}
+.kp>.kh .kwd{font-size:12px;color:var(--tx3);margin-left:auto}
+.kb{padding:14px 18px}
+.row{display:flex;gap:10px;margin-bottom:10px}
+.row:last-child{margin-bottom:0}
+.row .lb{flex:0 0 76px;font-size:12.5px;font-weight:700;text-align:center;
+  border-radius:6px;padding:3px 0;height:24px;line-height:18px;margin-top:2px}
+.lb-plain{background:rgba(126,231,135,.14);color:var(--green);border:1px solid rgba(126,231,135,.3)}
+.lb-mem{background:rgba(188,140,255,.14);color:var(--purple);border:1px solid rgba(188,140,255,.3)}
+.lb-cal{background:rgba(88,166,255,.14);color:var(--blue);border:1px solid rgba(88,166,255,.3)}
+.lb-trap{background:rgba(255,123,114,.13);color:var(--red);border:1px solid rgba(255,123,114,.3)}
+.row .ct{flex:1;min-width:0;font-size:14.8px;color:var(--tx)}
+.row .ct p{margin:0 0 6px}
+.row .ct p:last-child{margin-bottom:0}
+
+.f{display:block;background:#0b0f16;border:1px solid var(--line);border-left:3px solid var(--cyan);
+  border-radius:7px;padding:9px 12px;margin:7px 0;font-family:"Cambria Math",Consolas,"Courier New",monospace;
+  font-size:15px;color:#d7e6f5;white-space:pre-wrap;word-break:break-word;overflow-x:auto}
+.f .cm{color:var(--tx3);font-family:inherit}
+.hl{color:var(--yellow);font-weight:700}
+.hl2{color:var(--cyan);font-weight:700}
+.hl3{color:var(--pink);font-weight:700}
+.mnc{background:rgba(188,140,255,.1);border:1px dashed rgba(188,140,255,.35);border-radius:7px;
+  padding:7px 11px;color:#e5d9ff;font-size:14.5px;margin:6px 0;display:block}
+.mnc b{color:var(--purple)}
+.small{font-size:13.2px;color:var(--tx3)}
+
+/* 例题 */
+.ex{border:1px solid var(--line);border-radius:10px;background:var(--panel);margin-bottom:14px;overflow:hidden}
+.ex>.eh{padding:11px 18px;background:rgba(255,209,102,.07);border-bottom:1px solid var(--line);
+  display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.ex>.eh .no{font-size:12px;font-weight:700;color:var(--bg);background:var(--yellow);border-radius:5px;padding:2px 7px}
+.ex>.eh .ty{font-size:12px;color:var(--orange);border:1px solid rgba(255,166,87,.4);border-radius:5px;padding:1px 7px}
+.ex>.eh .ti{font-weight:600;font-size:15.5px}
+.eb{padding:14px 18px}
+.ex .q{color:var(--tx);font-size:14.8px;margin:0 0 8px}
+.ex details{border-top:1px dashed var(--line);margin-top:8px;padding-top:8px}
+.ex summary{cursor:pointer;color:var(--blue);font-size:14px;font-weight:600;list-style:none;outline:none}
+.ex summary::-webkit-details-marker{display:none}
+.ex summary:before{content:"▸ ";}
+.ex details[open] summary:before{content:"▾ ";}
+.ex details[open] summary{color:var(--cyan)}
+.sol{margin-top:8px;font-size:14.6px}
+.sol .st{margin:0 0 8px;padding-left:22px;position:relative;color:var(--tx)}
+.sol .st:before{content:"";position:absolute;left:6px;top:9px;width:6px;height:6px;border-radius:50%;background:var(--cyan)}
+.ans{background:rgba(126,231,135,.09);border:1px solid rgba(126,231,135,.3);border-radius:7px;
+  padding:8px 12px;margin:10px 0 0;font-size:14.6px}
+.ans b{color:var(--green)}
+.tip{background:rgba(255,166,87,.08);border-left:3px solid var(--orange);border-radius:0 7px 7px 0;
+  padding:8px 12px;margin:10px 0 0;font-size:14px;color:#ffd9b0}
+.tip b{color:var(--orange)}
+
+/* 表格 */
+.tbl{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0;display:block;overflow-x:auto}
+.tbl th,.tbl td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.tbl th{background:var(--panel2);color:var(--cyan);font-weight:600;white-space:nowrap}
+.tbl td.k{color:var(--yellow);white-space:nowrap}
+.tbl tr:nth-child(even) td{background:rgba(255,255,255,.015)}
+
+/* 清单 */
+ul.pts{margin:6px 0;padding-left:20px}
+ul.pts li{margin:4px 0;font-size:14.6px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}.hero h1{font-size:23px}}
+.card{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:14px 16px}
+.card h4{margin:0 0 8px;font-size:15px;color:var(--cyan)}
+.foot{margin-top:50px;padding-top:20px;border-top:1px solid var(--line);color:var(--tx3);font-size:13px}
+.btnbar{position:fixed;right:18px;bottom:18px;display:flex;gap:8px;z-index:60}
+.btn{border:1px solid var(--line);background:var(--panel2);color:var(--tx2);border-radius:8px;
+  padding:8px 12px;font-size:13px;cursor:pointer}
+.btn:hover{border-color:var(--blue);color:var(--blue)}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="tb-title">《西方经济学》（第二版）下册 · 下篇 宏观经济学 · 考点全覆盖</div>
+    <div class="chips">
+      <a class="chip acc" href="#intro">使用说明</a>
+      <a class="chip" href="#ch9">第九章 基本指标</a>
+      <a class="chip" href="#ch10">第十章 收入—支出</a>
+      <a class="chip" href="#ch11">第十一章 IS—LM</a>
+      <a class="chip" href="#ch12">第十二章 AD—AS</a>
+      <a class="chip" href="#ch13">第十三章 失业·通胀·周期</a>
+      <a class="chip" href="#ch14">第十四章 开放经济</a>
+      <a class="chip" href="#fx">附录 公式速查</a>
+      <a class="chip" href="#mix">附录 易混对比</a>
+      <a class="chip" href="#skill">附录 计算套路</a>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<div class="hero">
+  <h1><span>宏观经济学 第九—十四章</span>　考点全覆盖讲义</h1>
+  <p>教材：马克思主义理论研究和建设工程重点教材《西方经济学》（第二版）<b>下册</b>（下篇 宏观经济学）</p>
+  <p>覆盖章节：第九章 宏观经济的基本指标及其衡量 → 第十四章 开放条件下的宏观经济</p>
+  <div class="meta">
+    <span class="tag">考点 <b>60+</b> 个</span>
+    <span class="tag">配套例题 <b>40+</b> 道</span>
+    <span class="tag">每个考点含：<b>大白话 + 记忆法 + 计算技巧</b></span>
+    <span class="tag">例题答案<b>默认折叠</b>，可自测后再展开</span>
+  </div>
+</div>
+
+<section id="intro">
+<div class="ch-head" style="border-left-color:var(--yellow)">
+  <h2><em>怎么用</em>先花 3 分钟看这一页</h2>
+  <p class="oneline">这份讲义按"<b>一个考点 = 大白话 + 记忆法 + 计算技巧 + 易错点</b>"的格式写，例题先看题干自己做一遍，再点开答案。</p>
+</div>
+
+<div class="grid2" style="margin-top:16px">
+  <div class="card">
+    <h4>六章的主线一句话串起来</h4>
+    <ul class="pts">
+      <li><b>第九章</b>：先学会"量"经济——产出（GDP）、价格（通胀）、就业（失业）怎么算。</li>
+      <li><b>第十章</b>：最简单的收入决定——只管需求，价格、利率都不动（45°线模型）。</li>
+      <li><b>第十一章</b>：把利率加进来——产品市场（IS）+ 货币市场（LM）同时均衡。</li>
+      <li><b>第十二章</b>：把价格也放开——总需求（AD）+ 总供给（AS），短期波动的完整框架。</li>
+      <li><b>第十三章</b>：用这个框架解释两大病——失业、通胀，外加菲利普斯曲线和经济周期。</li>
+      <li><b>第十四章</b>：打开国门——汇率、国际收支、蒙代尔—弗莱明模型与政策搭配。</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4>备考优先级（按出题频率）</h4>
+    <ul class="pts">
+      <li><span class="hl">★★★ 必考计算</span>：GDP 三种算法、名义/实际 GDP、乘数全套、IS—LM 联立求解、AD—AS 求解、奥肯定律、菲利普斯曲线。</li>
+      <li><span class="hl">★★★ 必考论述</span>：财政/货币政策效果（IS—LM）、蒙代尔—弗莱明"固财浮货"、菲利普斯曲线短期与长期、滞胀与供给冲击。</li>
+      <li><span class="hl2">★★ 高频简答</span>：GDP 的局限、失业类型、通胀类型与成因、经济周期类型、三元悖论。</li>
+      <li><span class="hl3">★ 名词解释</span>：流动性陷阱、挤出效应、自然失业率、潜在 GDP、实际汇率、自动稳定器、牺牲率。</li>
+    </ul>
+  </div>
+</div>
+
+<div class="card" style="margin-top:12px">
+  <h4>做计算题的通用三步法（本讲义所有计算题都套它）</h4>
+  <ul class="pts">
+    <li><b>第 1 步 认变量</b>：把题里给的字母对上号（β 是边际消费倾向，d 是投资对利率的敏感度，k/h 是货币需求的收入/利率敏感度……）。对不上号，后面全白做。</li>
+    <li><b>第 2 步 写方程</b>：把均衡条件写出来（如"总产出 = 总支出""货币需求 = 货币供给"），别急着算数。</li>
+    <li><b>第 3 步 代数字</b>：代入后做代数化简，最后一步才按计算器。算完一定要<b>代回原式验证</b>（这是拿满分的关键习惯）。</li>
+  </ul>
+</div>
+</section>
+
+<!-- ======================= 第九章 ======================= -->
+<section class="chapter" id="ch9">
+<div class="ch-head">
+  <h2><em>第九章</em>宏观经济的基本指标及其衡量</h2>
+  <p class="oneline">这一章只干一件事：<b>教你怎么"量"一个经济体</b>——产出用 GDP、价格用 CPI/平减指数、就业用失业率。全章都是定义 + 计算，是后面所有模型的基础。</p>
+  <div class="map">
+    <span>GDP 含义四要素</span><span>三种核算法</span><span>名义 vs 实际</span><span>平减指数 vs CPI</span>
+    <span>失业率口径</span><span>失业三类型</span><span>自然失业率</span><span>潜在 GDP</span><span>滞胀</span><span>GDP 局限</span>
+  </div>
+</div>
+
+<div class="sec-h"><span class="bar"></span><h3>考点精讲</h3><span class="cnt">10 个考点</span></div>
+
+<div class="kp">
+  <div class="kh"><span class="no">9-1</span><span class="nm">GDP 的含义（四个关键词）</span><span class="lv">★★★</span><span class="kwd">名词解释 / 选择</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>GDP 就是：<b>一段时间内，在一个国家的地盘上，新生产出来、并且卖给"最终用户"的那些东西，按市场价格加起来一共多少钱</b>。四个限定词缺一不可。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">口诀：<b>市值 · 最终 · 境内 · 流量</b>　→　联想"<b>钱，最终在境内流动</b>"</span>
+      <p class="small">① 市值：按<b>市场价</b>算，不是按成本、也不是按"幸福感"；② 最终：只算<b>最终产品</b>，中间品不算（防重复计算）；③ 境内：按<b>国土原则</b>（在中国境内生产就算中国的，不管老板是哪国人）；④ 流量：是<b>一段时期</b>内的量，不是某一时点的存量。</p>
+    </div></div>
+    <div class="row"><span class="lb lb-cal">公式</span><div class="ct"><span class="f">GDP = Σ（某最终产品的市场价格 × 该产品的产量）</span></div></div>
+    <div class="row"><span class="lb lb-trap">易错</span><div class="ct"><p>下面这些<b>都不计入 GDP</b>：中间产品（轮胎卖给汽车厂）、二手货交易（二手房、二手车本身，但中介费算）、自己做家务、股票债券买卖（只是资产换手）、政府转移支付（养老金、救济金，没对应生产）、纯金融资产交易。</p>
+    <p class="small">对照：<b>计入的</b>——新建住房（算投资）、存货增加（算存货投资）、家政保姆工资（市场化的服务）、政府雇员工资（政府购买）。</p></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">9-2</span><span class="nm">GDP 的三种核算方法</span><span class="lv">★★★</span><span class="kwd">计算 / 简答</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>同一块蛋糕，三种切法：<b>看谁买了</b>（支出法）、<b>看谁赚了</b>（收入法）、<b>看谁造的</b>（生产法/增值法）。理论上三种结果相等，实际会有"统计误差"。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">支出法记 <b>C + I + G + NX</b>　→　"<b>消 · 投 · 政 · 净</b>"（老百姓花、企业投、政府买、外国人净买）</span>
+      <span class="mnc">收入法记"<b>打工拿工资、借钱收利息、出租收租金、老板拿利润</b>，再补上<b>折旧</b>和<b>间接税减补贴</b>"</span>
+      <span class="mnc">生产法记"<b>每个行业只算自己增加的那部分价值</b>"（总产出 − 中间投入），所以又叫<b>增值法</b></span>
+    </div></div>
+    <div class="row"><span class="lb lb-cal">公式</span><div class="ct">
+      <span class="f">支出法：GDP = C（消费） + I（投资） + G（政府购买） + NX（净出口 = X − M）</span>
+      <span class="f">收入法：GDP = 工资 + 利息 + 租金 + 利润 + 折旧 + 间接税 − 补助金</span>
+      <span class="f">生产法：GDP = Σ（各部门总产出 − 各部门中间投入） = Σ 增加值</span>
+      <p class="small">投资 I 里的坑：<b>买机器设备算投资，盖新房算投资，存货增加也算投资</b>；但<b>买股票债券不算投资</b>（那是金融资产，不是新生产的资本品）。</p>
+    </div></div>
+    <div class="row"><span class="lb lb-trap">易错</span><div class="ct"><p>① 政府购买 G <b>不含</b>转移支付；② 净出口是"出口减进口"，进口要<b>减掉</b>（因为 C、I、G 里可能含进口品，要剔除外国产的）；③ 支出法里的"投资"是<b>总投资</b>（含折旧重置），不是净投资。</p></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">9-3</span><span class="nm">名义 GDP、实际 GDP 与 GDP 平减指数</span><span class="lv">★★★</span><span class="kwd">计算</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p><b>名义 GDP</b>：用<b>当年价格</b>算的产值（产量涨、价格涨，它都会涨，分不清）。<br><b>实际 GDP</b>：用<b>基年价格</b>算的产值（把价格变动"冻住"，只看产量变没变）。<br><b>GDP 平减指数</b>：名义 ÷ 实际，反映"价格涨了多少"。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">"<b>名义跟着价格跑，实际只认货多少</b>"</span>
+      <p class="small">算实际 GDP 就一句话：<b>永远拿基年的价格 × 当年的产量</b>。基年一变，实际 GDP 数值也变（但增长率不变）。</p>
+    </div></div>
+    <div class="row"><span class="lb lb-cal">公式</span><div class="ct">
+      <span class="f">名义 GDP = Σ（当年价格 P<sub>t</sub> × 当年产量 Q<sub>t</sub>）
+实际 GDP = Σ（基年价格 P<sub>基期</sub> × 当年产量 Q<sub>t</sub>）
+GDP 平减指数 = （名义 GDP ÷ 实际 GDP） × 100　　　<span class="cm">教材式（9.3）</span>
+实际 GDP = （名义 GDP ÷ 平减指数） × 100　　　　　<span class="cm">教材式（9.4）</span></span>
+      <p class="small">计算技巧：<b>平减指数本质是"现价篮子 ÷ 基价篮子"</b>，所以基年的平减指数一定 = 100。做题时先算名义，再算实际，最后相除，三步走不会乱。</p>
+    </div></div>
+    <div class="row"><span class="lb lb-trap">易错</span><div class="ct"><p>基年选错最致命——题目说"以 2018 年为基期"，就必须用 <b>2018 年的价格</b>去乘以后各年的产量。另外，实际 GDP 的<b>数值</b>依赖基年，但<b>增长率</b>不依赖。</p></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">9-4</span><span class="nm">CPI、PPI 与通货膨胀率</span><span class="lv">★★★</span><span class="kwd">计算 / 简答</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p><b>CPI</b>：盯住老百姓固定买的那"一篮子"东西，看这篮子今年比基年贵了多少。<br><b>PPI</b>：盯住企业出厂的批发价。<br><b>通货膨胀率</b>：就是价格指数的<b>百分比涨幅</b>。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">"<b>CPI 是百姓的菜篮子，平减指数是自家全产出</b>"　→　菜篮子<b>固定</b>，自家产出<b>随产量变</b></span>
+      <p class="small">专业点说：CPI 用<b>拉氏指数</b>（固定基期数量），平减指数用<b>帕氏指数</b>（用当期数量）。考试常问"两者为何不同"，就答这一句。</p>
+    </div></div>
+    <div class="row"><span class="lb lb-cal">公式</span><div class="ct">
+      <span class="f">CPI = （固定篮子按<b>当期</b>价格的费用 ÷ 同一篮子按<b>基期</b>价格的费用） × 100
+通货膨胀率 π = （CPI<sub>t</sub> − CPI<sub>t−1</sub>） ÷ CPI<sub>t−1</sub> × 100%</span>
+    </div></div>
+    <div class="row"><span class="lb lb-trap">易错</span><div class="ct"><p>CPI 与平减指数三大区别（简答常考）：① <b>篮子</b>：CPI 固定，平减指数随产量结构变；② <b>范围</b>：CPI 含进口消费品、不含投资品和政府购买，平减指数只含国内生产的全部最终产品；③ 因此 CPI 常<b>高估</b>生活成本上升（没考虑替代、质量改进、新商品）。</p></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">9-5</span><span class="nm">失业的衡量：劳动力、失业率、参与率</span><span class="lv">★★★</span><span class="kwd">计算</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>成年人被分成三类：<b>就业者</b>（有活干）、<b>失业者</b>（没活干但正在找）、<b>非劳动力</b>（不找活：学生、退休、丧失信心的）。<b>劳动力 = 就业 + 失业</b>，没在找工作的人<b>不算</b>失业。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">当失业者要满足三件事：<b>"没活干 + 想干活 + 正在找"</b>　→　三缺一就不算失业</span>
+      <span class="mnc">失业率 + 就业率 = <b>1</b>（因为分母都是劳动力），知道一个就能推出另一个</span>
+    </div></div>
+    <div class="row"><span class="lb lb-cal">公式</span><div class="ct">
+      <span class="f">劳动力人数 = 就业人数 + 失业人数　　　　　　<span class="cm">（9.7）</span>
+失业率 = 失业人数 ÷ 劳动力人数 × 100%　　　　<span class="cm">（9.8）</span>
+就业率 = 就业人数 ÷ 劳动力人数 × 100%　　　　<span class="cm">（9.9）</span>
+劳动力参与率 = 劳动力人数 ÷ 劳动年龄人口数 × 100%</span>
+    </div></div>
+    <div class="row"><span class="lb lb-trap">易错</span><div class="ct"><p>① <b>"丧失信心的劳动者"</b>（放弃找工作的）退出劳动力，会使失业率<b>下降</b>——这是失业率"看起来变好"的陷阱；② 分母是<b>劳动力</b>，不是"总人口"也不是"劳动年龄人口"（算参与率时才用后者）。</p></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">9-6</span><span class="nm">失业的三种类型与自然失业率</span><span class="lv">★★★</span><span class="kwd">简答 / 名词解释</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p><b>摩擦性失业</b>：在"换工作/找工作"的路上（信息不通、地域不匹配），短期、正常。<br><b>结构性失业</b>：技能对不上岗位，或者工资被最低工资法、工会抬得太高降不下来，长期、难治。<br><b>周期性失业</b>：经济冷了，岗位整体变少——这才是宏观经济学要治的对象。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">"<b>摩擦＝在路上（换），结构＝配不上（僵），周期＝没岗位（冷）</b>"</span>
+      <span class="mnc">"<b>摩擦 + 结构 = 自然失业率</b>（治不好的那部分），再加上周期性的，就是实际失业率"</span>
+    </div></div>
+    <div class="row"><span class="lb lb-cal">公式</span><div class="ct">
+      <span class="f">实际失业率 = 摩擦性失业率 + 结构性失业率 + 周期性失业率
+　　　　　 = 自然失业率 + 周期性失业率　　<span class="cm">（9.11）</span></span>
+    </div></div>
+    <div class="row"><span class="lb lb-trap">易错</span><div class="ct"><p><b>充分就业 ≠ 零失业</b>，而是"周期性失业为零"，此时失业率 = 自然失业率。考题常在这里挖坑。</p></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">9-7</span><span class="nm">潜在 GDP 与 GDP 缺口</span><span class="lv">★★</span><span class="kwd">名词解释</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p><b>潜在 GDP</b>：现有资本和技术下，把人（劳动力）<b>充分用起来</b>能产出的量，也就是"满负荷产量"。<b>GDP 缺口</b> = 实际 − 潜在：为负说明经济偏冷、有资源闲置。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct"><span class="mnc">"<b>潜在 = 充分就业时的实际 GDP</b>"；"<b>缺口为负 = 衰退缺口，缺口为正 = 通胀缺口</b>"</span></div></div>
+    <div class="row"><span class="lb lb-cal">公式</span><div class="ct"><span class="f">GDP 缺口 = 实际 GDP − 潜在 GDP
+产出缺口率 = （实际 GDP − 潜在 GDP） ÷ 潜在 GDP × 100%</span></div></div>
+    <div class="row"><span class="lb lb-trap">易错</span><div class="ct"><p>短期总产出主要由<b>就业量</b>决定（资本、技术短期不变），所以失业率一上去，实际 GDP 就掉到潜在水平之下——这正是<b>奥肯定律</b>（第十三章）的由来。</p></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">9-8</span><span class="nm">四大宏观经济问题：失业、通胀、滞胀、增长</span><span class="lv">★★</span><span class="kwd">简答</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>宏观经济学要解决的四个问题，正好对应四大指标：<b>失业</b>（就业指标）、<b>通货膨胀</b>（价格指标）、<b>滞胀</b>（两个指标同时坏：高失业 + 高通胀）、<b>增长</b>（产量指标长期向上）。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct"><span class="mnc">"<b>滞胀 = 停滞 + 通胀</b>"（stagflation）　→　"又贵又没人要，还裁人"</span>
+    <p class="small">滞胀是<b>供给冲击</b>（如石油涨价）造成的，用需求政策治不了——治通胀会加深衰退，治衰退会加剧通胀。这在第十二、十三章会详细考。</p></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">9-9</span><span class="nm">流量与存量</span><span class="lv">★</span><span class="kwd">选择 / 名词解释</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p><b>存量</b>：某一<b>时点</b>上的量（像照片）——财富、资本存量、失业人数。<b>流量</b>：某一<b>时期</b>内的量（像录像）——收入、GDP、投资。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct"><span class="mnc">"<b>存量看时点（照片），流量看时段（录像）</b>"；"<b>投资（流量）会变成资本（存量）</b>"</span></div></div>
+    <div class="row"><span class="lb lb-trap">易错</span><div class="ct"><p>经典坑：<b>GDP 是流量，不是存量</b>；"某人有 100 万存款"是存量，"他一年挣 20 万"是流量。</p></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">9-10</span><span class="nm">GDP 指标的局限（本章评析）</span><span class="lv">★★</span><span class="kwd">论述</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>GDP 只是"生产了多少"的账本，<b>不是"过得好不好"的成绩单</b>。家务劳动、地下经济、闲暇、环境破坏、收入分配，它全都不记。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct"><span class="mnc">五个"不算"：<b>不算家务、不算地下、不算闲暇、不算环境、不算分配</b></span>
+    <p class="small">答题模板：先肯定（GDP 是衡量产出的最综合指标，便于国际比较和判断宏观形势）→ 再列局限（五不算 + 不能反映质量与结构）→ 最后补一句（应结合其他指标综合判断，不能唯 GDP 论）。</p></div></div>
+  </div>
+</div>
+
+<div class="sec-h"><span class="bar"></span><h3>第九章 例题</h3><span class="cnt">6 道</span></div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 1</span><span class="ty">计算</span><span class="ti">支出法核算 GDP</span></div>
+  <div class="eb">
+    <p class="q">某国一年内的资料如下（单位：亿元）：居民消费 5000；企业固定资产投资 1200；存货增加 300；政府购买商品和服务 1800；政府发放养老金 500；出口 1200；进口 1000；居民购买新建住房 400。求该国 GDP，并说明哪些项目不计入。</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">认变量：支出法四件套 C、I、G、NX。注意"新建住房"属于投资，"养老金"属于转移支付。</p>
+      <p class="st">C = 5000</p>
+      <p class="st">I = 固定资产投资 1200 + 存货增加 300 + 新建住房 400 = <b>1900</b></p>
+      <p class="st">G = 1800（<b>不含</b>养老金 500，那是转移支付，没有对应生产）</p>
+      <p class="st">NX = X − M = 1200 − 1000 = <b>200</b></p>
+      <p class="st">GDP = 5000 + 1900 + 1800 + 200 = 8900 亿元</p>
+      <div class="ans"><b>答案：GDP = 8900 亿元。</b>不计入的：政府养老金 500（转移支付）。若题中再出现"购买股票 200""二手房交易 300""自己做家务"也一律不计入。</div>
+      <div class="tip"><b>技巧：</b>做支出法的题，先把每个数字<b>贴标签</b>（C/I/G/NX/不计入），加总即可。最容易丢分的两处：忘记<b>存货增加</b>算投资、把<b>转移支付</b>误当成政府购买。</div>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 2</span><span class="ty">计算</span><span class="ti">名义 GDP、实际 GDP 与平减指数</span></div>
+  <div class="eb">
+    <p class="q">某经济只生产苹果和橘子。基年（2018）：苹果 5 元/斤、产 100 斤；橘子 4 元/斤、产 200 斤。2020 年：苹果 6 元/斤、产 120 斤；橘子 5 元/斤、产 220 斤。以 2018 年为基期，求 2020 年的名义 GDP、实际 GDP、GDP 平减指数，以及 2020 年相对 2018 年的价格涨幅和实际产量增幅。</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">2018 年（基年）：名义 GDP = 5×100 + 4×200 = 500 + 800 = <b>1300</b>；实际 GDP 同为 1300（基年名义=实际）。</p>
+      <p class="st">2020 年名义 GDP（用<b>当年</b>价格）= 6×120 + 5×220 = 720 + 1100 = <b>1820</b></p>
+      <p class="st">2020 年实际 GDP（用<b>基年</b>价格）= 5×120 + 4×220 = 600 + 880 = <b>1480</b></p>
+      <p class="st">平减指数 = 1820 ÷ 1480 × 100 ≈ <b>123</b></p>
+      <p class="st">价格涨幅 = 123 − 100 = <b>23%</b>；实际产量增幅 = 1480 ÷ 1300 − 1 ≈ <b>13.8%</b></p>
+      <div class="ans"><b>答案：名义 GDP 1820，实际 GDP 1480，平减指数 ≈123，物价上涨 23%，实际产出增长 13.8%。</b></div>
+      <div class="tip"><b>技巧：</b>名义与实际只差"用哪年的价格"——<b>名义用当年价，实际用基年价，产量永远用当年</b>。把这句话写在草稿纸上，这类题再也不会错。</div>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 3</span><span class="ty">计算 + 简答</span><span class="ti">CPI 与平减指数为何不同</span></div>
+  <div class="eb">
+    <p class="q">沿用上题数据。假设消费者固定篮子为"3 斤苹果 + 2 斤橘子"，基年为 2018 年。计算 2020 年的 CPI 与通货膨胀率，并解释它为什么与平减指数（123）不相等。</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">基年篮子费用 = 5×3 + 4×2 = 15 + 8 = <b>23</b></p>
+      <p class="st">2020 年同一篮子费用 = 6×3 + 5×2 = 18 + 10 = <b>28</b></p>
+      <p class="st">CPI = 28 ÷ 23 × 100 ≈ <b>121.7</b>；通货膨胀率 ≈ <b>21.7%</b></p>
+      <div class="ans"><b>答案：CPI ≈ 121.7，通胀率 ≈ 21.7%。</b>与平减指数 123 不同，原因在于：<b>CPI 用固定的基期篮子</b>（拉氏指数），而<b>平减指数用当期产量结构</b>（帕氏指数）。本题中橘子（相对便宜、消费量大）产量占比上升，使按当期产量加权的平减指数略高于固定篮子的 CPI。</div>
+      <div class="tip"><b>技巧：</b>CPI 计算永远三步：<b>基期篮子多少钱 → 当期同一篮子多少钱 → 后者除以前者 ×100</b>。篮子里的<b>数量永远不变</b>，只有价格在变。</div>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 4</span><span class="ty">计算</span><span class="ti">失业率与劳动参与率</span></div>
+  <div class="eb">
+    <p class="q">某国劳动年龄人口 1.2 亿，其中：就业 7200 万；正在积极找工作 400 万；因找不到工作已放弃寻找 100 万；其余为全日制学生与退休人员。求劳动力人数、失业率、就业率、劳动力参与率。若那 100 万"丧失信心者"全部重新开始找工作（且尚未找到），失业率变为多少？</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">劳动力 = 就业 7200 + 失业 400 = <b>7600 万</b>（放弃找工作者<b>不计入</b>劳动力）</p>
+      <p class="st">失业率 = 400 ÷ 7600 × 100% ≈ <b>5.26%</b>；就业率 = 7200 ÷ 7600 ≈ <b>94.74%</b>（两者相加 = 1）</p>
+      <p class="st">参与率 = 7600 ÷ 12000 × 100% ≈ <b>63.3%</b></p>
+      <p class="st">若 100 万人回来找工作：劳动力 = 7200 + 500 = 7700 万，失业率 = 500 ÷ 7700 ≈ <b>6.49%</b></p>
+      <div class="ans"><b>答案：劳动力 7600 万，失业率 5.26%，就业率 94.74%，参与率 63.3%；丧失信心者回归后失业率升至 6.49%。</b></div>
+      <div class="tip"><b>记忆要点：</b>放弃找工作的人"退出劳动力"，会<b>人为压低</b>失业率。所以看到"失业率下降"别急着高兴，要问一句：<b>是因为找到工作了，还是因为不找了？</b></div>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 5</span><span class="ty">简答</span><span class="ti">充分就业与自然失业率</span></div>
+  <div class="eb">
+    <p class="q">某国摩擦性失业率 2%，结构性失业率 3%，周期性失业率 1.5%。（1）求自然失业率和实际失业率；（2）该国是否实现了充分就业？为什么？</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">自然失业率 = 摩擦性 + 结构性 = 2% + 3% = <b>5%</b></p>
+      <p class="st">实际失业率 = 自然失业率 + 周期性 = 5% + 1.5% = <b>6.5%</b></p>
+      <div class="ans"><b>答案：（1）自然失业率 5%，实际失业率 6.5%；（2）没有实现充分就业</b>——因为<b>周期性失业率不为零</b>（1.5%）。充分就业只要求"周期性失业 = 0"，摩擦性和结构性失业依然存在，所以充分就业时失业率 = 自然失业率 = 5%，而非 0。</div>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 6</span><span class="ty">判断 / 选择</span><span class="ti">GDP 口径辨析</span></div>
+  <div class="eb">
+    <p class="q">判断下列项目是否计入当年中国 GDP，并说明理由：（1）面包厂卖给超市的面粉；（2）家庭主妇在家做饭；（3）某人花 20 万买入贵州茅台股票；（4）某美资企业在上海生产的汽车；（5）政府给低保户发放的补助金；（6）二手房中介收取的 2 万元佣金。</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <div class="ans">
+      （1）<b>不计入</b>——中间产品，价值已包含在最终产品（面包）中，计入会重复计算。<br>
+      （2）<b>不计入</b>——非市场性活动，没有市场交易价格。<br>
+      （3）<b>不计入</b>——金融资产交易，只是所有权转移，不是当期生产。<br>
+      （4）<b>计入</b>——按<b>国土原则</b>，在中国境内生产即计入中国 GDP（与老板国籍无关）。<br>
+      （5）<b>不计入</b>——政府转移支付，没有对应的当期生产与服务交换。<br>
+      （6）<b>计入</b>——中介提供了当期服务，佣金是服务的市场价值（但房屋本身价值不计入）。
+      </div>
+      <div class="tip"><b>技巧：</b>判断计入与否只需问一句——<b>"今年有没有新生产出东西、并且按市价卖给了最终用户？"</b>能答"是"就计入，否则不计入。</div>
+    </div></details>
+  </div>
+</div>
+</section>
+
+<!-- ======================= 第十章 ======================= -->
+<section class="chapter" id="ch10">
+<div class="ch-head">
+  <h2><em>第十章</em>国民收入的决定：收入—支出模型</h2>
+  <p class="oneline">这一章建立最简单的均衡收入模型：<b>价格不变、利率不变，只让"总支出"决定"总收入"</b>（所以叫收入—支出模型，图形上就是 45° 线）。核心考点：<b>消费函数、乘数</b>。</p>
+  <div class="map">
+    <span>均衡收入原理</span><span>消费/储蓄函数</span><span>MPC·MPS·APC·APS</span><span>其他消费理论</span>
+    <span>投资函数 i=e−dr</span><span>资本边际效率</span><span>托宾 q</span><span>三/四部门均衡</span>
+    <span>乘数全套</span><span>平衡预算乘数</span><span>节俭悖论</span>
+  </div>
+</div>
+
+<div class="sec-h"><span class="bar"></span><h3>考点精讲</h3><span class="cnt">11 个考点</span></div>
+
+<div class="kp">
+  <div class="kh"><span class="no">10-1</span><span class="nm">均衡国民收入的决定原理</span><span class="lv">★★★</span><span class="kwd">简答 / 计算</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>企业按某个规模生产，结果<b>生产出来的正好全卖掉了</b>（没出现意外的库存积压，也没供不应求），企业就不会改变产量——这个产量就是<b>均衡国民收入</b>。判别标准只有一条：<b>非计划存货投资 = 0</b>。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">"<b>生产 = 卖掉，没有意外积压</b>"；图形上就是 <b>AE 线与 45° 线的交点</b></span>
+      <p class="small">45° 线上的每一点都满足"支出 = 收入"，所以 AE 曲线和它相交的那一点才既是"想买的量"又是"生产的量"。</p>
+    </div></div>
+    <div class="row"><span class="lb lb-cal">公式</span><div class="ct">
+      <span class="f">均衡条件：Y = AE（总支出 = 总产出）
+等价说法：计划投资 = 计划储蓄（I = S）　或　非计划存货投资 = 0
+若 AE &gt; Y（想买的比生产的多）→ 意外动用库存 → 企业扩产 → Y 上升
+若 AE &lt; Y（卖不掉）　　　　　→ 库存意外积压 → 企业减产 → Y 下降</span>
+      <p class="small">计算技巧：把 AE 写成"常数 + 系数×Y"的形式，再令 AE = Y 解一元一次方程，秒出答案。</p>
+    </div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">10-2</span><span class="nm">消费函数与消费倾向</span><span class="lv">★★★</span><span class="kwd">计算 / 名词解释</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p><b>α（自发消费）</b>：就算一分钱不挣也要花的钱（动用储蓄或借债），是"保底消费"。<br><b>β（边际消费倾向 MPC）</b>：每多挣 1 块钱，拿出来花掉的<b>比例</b>（比如 0.8 就是多挣 1 块花 8 毛）。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">"<b>α 是保底花，β 是增量花</b>"；"<b>边际看增量（ΔC/ΔY），平均看总账（C/Y）</b>"</span>
+      <span class="mnc">必背等价关系：<b>MPC + MPS = 1</b>；<b>APC + APS = 1</b>；<b>C + S = Y</b></span>
+    </div></div>
+    <div class="row"><span class="lb lb-cal">公式</span><div class="ct">
+      <span class="f">消费函数：C = α + βY　　（α &gt; 0，0 &lt; β &lt; 1）
+MPC = ΔC / ΔY = β　　　　APC = C / Y = α/Y + β
+储蓄函数：S = Y − C = −α + (1 − β)Y
+MPS = ΔS / ΔY = 1 − β　　APS = S / Y</span>
+      <p class="small">做题套路：给一张收入—消费表，先算 <b>β = ΔC/ΔY</b>，再算 <b>α = C − βY</b>；给函数式就直接读 α、β。</p>
+    </div></div>
+    <div class="row"><span class="lb lb-trap">易错</span><div class="ct"><p>① 因为 α &gt; 0，所以 <b>APC &gt; MPC</b>（且收入越高 APC 越接近 β）；② 消费曲线与 45° 线的交点是<b>收支相抵点</b>（S = 0），交点<b>左边</b>是负储蓄（C &gt; Y，动用存款或借债），右边才有正储蓄。</p></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">10-3</span><span class="nm">其他消费理论（相对收入 / 生命周期 / 持久收入）</span><span class="lv">★★</span><span class="kwd">简答</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p><b>相对收入</b>（杜森贝利）：消费不光看自己挣多少，还看邻居挣多少（<b>示范效应</b>），以及自己过去的最高水平（<b>棘轮效应</b>：由俭入奢易、由奢入俭难）。<br><b>生命周期</b>（莫迪利安尼）：人一辈子平滑消费——年轻借钱、中年储蓄、老年花储蓄。<br><b>持久收入</b>（弗里德曼）：只看"长期平均收入"，临时奖金基本不花。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">"<b>相对收入＝爱攀比 + 下不来（棘轮）</b>　→　"<b>棘轮</b>"想象成只能往上推、退不回来的齿轮"</span>
+      <span class="mnc">"<b>生命周期＝一辈子拉平；持久收入＝只看长期平均</b>"</span>
+      <p class="small">三者共同意义：短期消费不只由当期收入决定 → 解释"短期消费函数不稳定、长期消费函数稳定"的谜团。</p>
+    </div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">10-4</span><span class="nm">投资函数与资本边际效率</span><span class="lv">★★★</span><span class="kwd">计算 / 名词解释</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p><b>投资函数</b>：利率越高，借钱搞项目越贵，投资越少 —— 所以投资是利率的<b>减函数</b>。<br><b>资本边际效率（MEC）</b>：让一个投资项目"刚好不赚不赔"的那个贴现率（类似内部收益率）。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">"<b>利率是借钱的价格，价格贵就少买（少投资）</b>" → 投资曲线 <b>i = e − dr</b> 向<b>右下</b>倾斜</span>
+      <span class="mnc">投资决策规则：<b>资本边际效率 &gt; 市场利率 → 值得投</b>；反之不投</span>
+    </div></div>
+    <div class="row"><span class="lb lb-cal">公式</span><div class="ct">
+      <span class="f">投资函数：i = e − d·r　　（e：自发投资，d：投资对利率的敏感系数）
+资本边际效率：使 Σ R<sub>t</sub>/(1+MEC)<sub>t</sub> = 资本品价格 成立的贴现率
+托宾 q = 企业的股票市场价值 ÷ 资本重置成本　　q &gt; 1 → 值得投资</span>
+    </div></div>
+    <div class="row"><span class="lb lb-trap">易错</span><div class="ct"><p>d 越大＝投资对利率<b>越敏感</b>；这个 d 后面在 IS—LM 里决定 IS 曲线的<b>平缓程度</b>（越敏感越平缓），也决定<b>挤出效应</b>大小，是贯穿两章的关键参数。</p></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">10-5</span><span class="nm">两部门 / 三部门 / 四部门均衡收入</span><span class="lv">★★★</span><span class="kwd">计算</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>两部门＝只有居民和企业；三部门＝加政府（收税、买东西）；四部门＝再加外国人（出口、进口）。部门越多，<b>漏出</b>（储蓄、税收、进口）越多，同样的支出能"滚"出来的收入就越小。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">"<b>分母就是 1 − 边际支出倾向 + 漏出倾向</b>"：两/三部门分母 <b>1−β</b>；四部门分母 <b>1−β+γ</b>（γ＝边际进口倾向）</span>
+      <span class="mnc">"<b>凡是要经过老百姓的手才花出去的，都要乘一个 β</b>（税收、转移支付）；政府自己直接买的，不用乘"</span>
+    </div></div>
+    <div class="row"><span class="lb lb-cal">公式</span><div class="ct">
+      <span class="f">两部门：Y = C + I，C = α + βY　→　Y = （α + I）/（1 − β）</span>
+      <span class="f">三部门（定量税）：C = α + β（Y − T + TR）
+　　　Y = （α + I + G + β·TR − β·T）/（1 − β）</span>
+      <span class="f">三部门（比例税 T = tY）：Y = （α + I + G + β·TR）/［1 − β（1 − t）］</span>
+      <span class="f">四部门：NX = X − M，M = M<sub>0</sub> + γY
+　　　Y = （α + I + G − βT + βTR + X − M<sub>0</sub>）/（1 − β + γ）</span>
+      <p class="small">技巧：别死记公式，掌握做法——<b>把 C、I、G、NX 全写成 Y 的表达式 → 加总成 AE → 令 AE = Y → 解方程</b>。这样任何变体（比例税、进口函数、投资补贴）都能现场推导。</p>
+    </div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">10-6</span><span class="nm">乘数原理（全套乘数公式）</span><span class="lv">★★★</span><span class="kwd">计算 / 论述</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>我多花 100 块买你的东西 → 你多挣 100 块 → 你拿出 80 块（β=0.8）买别人的 → 别人多挣 80 → 再花 64……一轮一轮滚下去，<b>最初那 100 块最终让整个经济的收入增加了 500 块</b>。这个"放大倍数"就是乘数。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">"<b>花得越多（β 越大），漏得越少，乘数越大</b>"，<b>1/(1−β) = 1/MPS</b>——存得越少，滚得越猛</span>
+      <span class="mnc">四类乘数一张表：<b>投资、政府购买 = 1/(1−β)</b>；<b>转移支付 = β/(1−β)</b>；<b>税收 = −β/(1−β)</b>；<b>平衡预算 = 1</b></span>
+      <span class="mnc">记忆窍门：<b>税收乘数比转移支付乘数只多一个负号</b>（一个抽钱一个给钱，力度一样方向相反）</span>
+    </div></div>
+    <div class="row"><span class="lb lb-cal">公式</span><div class="ct">
+      <span class="f">投资乘数 k<sub>i</sub> = 政府购买乘数 k<sub>g</sub> = 1 /（1 − β）= 1 / MPS
+转移支付乘数 k<sub>tr</sub> = β /（1 − β）　　　（比政府购买乘数<b>小</b>，差一个 β）
+税收乘数 k<sub>t</sub> = − β /（1 − β）　　　　（<b>负号</b>：加税压收入，减税拉收入）
+平衡预算乘数 k<sub>b</sub> = 1　　　　　　　　（ΔG = ΔT 时，ΔY = ΔG）
+四部门外贸乘数 = 1 /（1 − β + γ）
+比例税下的乘数 = 1 /［1 − β（1 − t）］　　　（漏出更多 → 乘数更小）</span>
+      <p class="small">算多变量变化时：<b>ΔY = 各个乘数 × 各自的变化量，然后相加</b>（线性可叠加）。</p>
+    </div></div>
+    <div class="row"><span class="lb lb-trap">易错</span><div class="ct"><p>① 政府购买乘数<b>大于</b>转移支付乘数：因为政府买东西是<b>直接</b>形成需求，而发钱给居民后，居民只花掉 β 部分（剩下存起来了）——这就是为什么"政府搞基建"比"直接发钱"拉动 GDP 更猛（模型内结论）。<br>② 平衡预算乘数 = 1 的前提是<b>定量税</b>；比例税下它小于 1。</p></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">10-7</span><span class="nm">节俭悖论</span><span class="lv">★★</span><span class="kwd">简答</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>人人都想多存钱 → 没人买东西 → 企业卖不掉就减产裁员 → 大家收入下降 → <b>最后反而存不下钱</b>。个人理性导致集体非理性。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct"><span class="mnc">"<b>人人存钱 → 没人买 → 收入降 → 存不成</b>"（越省越穷，越花越富——仅适用于<b>萧条、资源闲置</b>时）</span></div></div>
+    <div class="row"><span class="lb lb-trap">易错</span><div class="ct"><p>节俭悖论<b>只在有效需求不足、资源大量闲置时成立</b>；若经济已在充分就业状态（供给受限），多储蓄 → 利率降 → 投资增，节俭反而有利。答题时一定要加这个<b>前提限定</b>。</p></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">10-8</span><span class="nm">投资 q 理论与影响预期收益的因素</span><span class="lv">★</span><span class="kwd">名词解释</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p><b>托宾 q</b>：股票市场对这家公司的估值 ÷ 重新买一套同样的设备要花的钱。q &gt; 1 说明"市场说它值钱，比买新设备还贵" → 值得新增投资。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct"><span class="mnc">"<b>q &gt; 1，多盖厂；q &lt; 1，别扩张</b>"（股市火 → 投资旺的传导链条）</span></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">10-9</span><span class="nm">影响消费的其他因素</span><span class="lv">★</span><span class="kwd">简答</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>除了收入，消费还受<b>利率、价格水平、收入分配、财富、社会保障、信贷条件</b>影响。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct"><span class="mnc">六字诀：<b>"利 · 价 · 分 · 富 · 保 · 贷"</b>（利率、物价、分配、财富、社保、信贷）</span>
+    <p class="small">答题提示：利率对消费的影响是<b>双向</b>的（替代效应：利率高→少花多存；收入效应：利率高→利息收入多→多花），所以理论上方向不明确——这个"不确定"本身就是得分点。</p></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">10-10</span><span class="nm">乘数发挥作用的前提与局限</span><span class="lv">★★</span><span class="kwd">论述</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>乘数要"滚"起来，前提是<b>经济里还有闲置资源</b>——有失业工人、有空闲产能，多出来的需求才能变成多出来的产量。若已经满负荷，需求增加只会变成<b>涨价</b>，产量不增。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct"><span class="mnc">"<b>有闲人闲机器，乘数才灵；满负荷再加需求，只会涨价</b>"</span>
+    <p class="small">其他局限：漏出（储蓄、税收、进口）会削弱乘数；传导有时滞；本章模型假设价格、利率不变，现实中两者都会变（这正是下一章 IS—LM 要解决的）。</p></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">10-11</span><span class="nm">本章评析要点</span><span class="lv">★</span><span class="kwd">论述</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>凯恩斯这个"需求决定收入"的框架，<b>重需求、轻供给</b>，适合萧条时期；但它忽略了供给侧约束、价格与利率的反馈、预期和制度因素，长期增长不能靠它解释。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct"><span class="mnc">答题三段式：<b>先肯定</b>（解释短期波动、有效需求不足很有效）→ <b>再指出局限</b>（价格利率不变假设、忽视供给与预期）→ <b>最后结合中国实际</b>（宏观调控既要扩内需也要供给侧结构性改革）</span></div></div>
+  </div>
+</div>
+
+<div class="sec-h"><span class="bar"></span><h3>第十章 例题</h3><span class="cnt">7 道</span></div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 1</span><span class="ty">计算</span><span class="ti">两部门均衡收入与消费、储蓄</span></div>
+  <div class="eb">
+    <p class="q">两部门经济中，消费函数 C = 300 + 0.75Y，投资 I = 500。求：（1）均衡国民收入；（2）此时的消费与储蓄；（3）投资乘数。</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">写方程：AE = C + I = 300 + 0.75Y + 500 = 800 + 0.75Y</p>
+      <p class="st">令 AE = Y：Y = 800 + 0.75Y → 0.25Y = 800 → <b>Y = 3200</b></p>
+      <p class="st">C = 300 + 0.75×3200 = 300 + 2400 = <b>2700</b>；S = Y − C = 3200 − 2700 = <b>500</b></p>
+      <p class="st">验证：S = −α + (1−β)Y = −300 + 0.25×3200 = 500，且 S = I = 500 ✓</p>
+      <p class="st">乘数 = 1/(1−0.75) = <b>4</b></p>
+      <div class="ans"><b>答案：均衡收入 3200，消费 2700，储蓄 500，投资乘数 4。</b></div>
+      <div class="tip"><b>技巧：</b>两部门题有个免费验算器：<b>均衡时 S = I</b>。算出 Y 后代回储蓄函数，若等于 I，就一定没算错。</div>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 2</span><span class="ty">计算</span><span class="ti">投资乘数的运用</span></div>
+  <div class="eb">
+    <p class="q">接上题。若企业自主投资由 500 增加到 600，求新的均衡收入与收入增量，并与乘数计算结果对照。</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">乘数法：ΔY = k × ΔI = 4 × 100 = <b>400</b> → 新均衡 Y = 3200 + 400 = <b>3600</b></p>
+      <p class="st">方程法验证：Y = (α + I)/(1−β) = (300 + 600)/0.25 = 900/0.25 = <b>3600</b> ✓</p>
+      <p class="st">其中消费增加 ΔC = β × ΔY = 0.75 × 400 = 300</p>
+      <div class="ans"><b>答案：新均衡收入 3600，增加 400。</b></div>
+      <div class="tip"><b>技巧：</b>见到"某某增加 Δ，求收入增加多少"——直接<b>乘数 × Δ</b> 一步到位，不必重解整个方程；但第一次做题建议用方程法验一遍，考试时再用快捷法省时间。</div>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 3</span><span class="ty">计算</span><span class="ti">三部门均衡收入与各类乘数</span></div>
+  <div class="eb">
+    <p class="q">三部门经济：C = 200 + 0.8(Y − T + TR)，定量税 T = 250，转移支付 TR = 50，投资 I = 300，政府购买 G = 400。求：（1）均衡国民收入；（2）政府购买乘数、税收乘数、转移支付乘数、平衡预算乘数；（3）若政府购买增加 100，新均衡收入是多少？</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">写 AE：C = 200 + 0.8(Y − 250 + 50) = 200 + 0.8Y − 160 = 40 + 0.8Y</p>
+      <p class="st">AE = C + I + G = 40 + 0.8Y + 300 + 400 = 740 + 0.8Y</p>
+      <p class="st">令 AE = Y：Y = 740 + 0.8Y → 0.2Y = 740 → <b>Y = 3700</b></p>
+      <p class="st">β = 0.8 → 政府购买乘数 = 1/(1−0.8) = <b>5</b>；税收乘数 = −0.8/0.2 = <b>−4</b>；转移支付乘数 = <b>4</b>；平衡预算乘数 = <b>1</b></p>
+      <p class="st">ΔG = 100 → ΔY = 5 × 100 = 500 → 新 Y = <b>4200</b>（验证：AE = 740 + 100 + 0.8Y → Y = 840/0.2 = 4200 ✓）</p>
+      <div class="ans"><b>答案：（1）Y = 3700；（2）5、−4、4、1；（3）Y = 4200。</b></div>
+      <div class="tip"><b>技巧：</b>三部门题最容易错在"可支配收入"——记住消费函数里的收入是 <b>Y<sub>d</sub> = Y − T + TR</b>，<b>减税加转移</b>。把这一项先化简成"常数 + 0.8Y"，后面就只是解一元一次方程了。</div>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 4</span><span class="ty">计算</span><span class="ti">平衡预算乘数的验证</span></div>
+  <div class="eb">
+    <p class="q">承上题（β = 0.8）。政府同时增加购买 100 和增加等额税收 100（即 ΔG = ΔT = 100）。求收入变动，并说明为什么平衡预算乘数等于 1。</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">扩张效应：ΔG = 100 → ΔY₁ = 5 × 100 = +500</p>
+      <p class="st">紧缩效应：ΔT = 100 → ΔY₂ = (−4) × 100 = −400</p>
+      <p class="st">合计：ΔY = 500 − 400 = <b>+100</b> = ΔG</p>
+      <div class="ans"><b>答案：收入净增 100，正好等于政府支出增量，故平衡预算乘数 = 1。</b>直觉解释：政府收上来的 100 块钱，本来会被居民花掉 80 块（β=0.8）；政府把这 100 块全部花出去，等于"把居民没花的那 20 块也花了"，净增加的需求刚好是 100 × (1 − β) × 乘数 = 20 × 5 = 100。</div>
+      <div class="tip"><b>记忆：</b>"<b>政府多收 100 又多花 100，GDP 就净多 100</b>"——这条结论记住，选择题直接秒选。</div>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 5</span><span class="ty">计算</span><span class="ti">比例税下的乘数（自动稳定器）</span></div>
+  <div class="eb">
+    <p class="q">承上题，但税收改为比例税 T = 0.25Y（t = 0.25），其余不变（β = 0.8，TR = 50，I = 300，G = 400）。求均衡收入与政府购买乘数，并说明为什么乘数变小了。</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">可支配收入 Y<sub>d</sub> = Y − 0.25Y + 50 = 0.75Y + 50</p>
+      <p class="st">C = 200 + 0.8(0.75Y + 50) = 200 + 0.6Y + 40 = 240 + 0.6Y</p>
+      <p class="st">AE = 240 + 0.6Y + 300 + 400 = 940 + 0.6Y → Y = 940/0.4 = <b>2350</b></p>
+      <p class="st">政府购买乘数 = 1/［1 − β(1 − t)］ = 1/［1 − 0.8×0.75］ = 1/0.4 = <b>2.5</b></p>
+      <div class="ans"><b>答案：均衡收入 2350，政府购买乘数 2.5。</b>乘数从 5 降到 2.5，是因为<b>收入每增加一元就自动被税收抽走 0.25 元</b>，漏出变大、放大效应变小 —— 这正是比例税作为<b>自动稳定器</b>的作用机理（经济过热时自动降温，衰退时自动托底）。</div>
+      <div class="tip"><b>技巧：</b>凡是比例税，就把公式里的 <b>β 换成 β(1−t)</b>，其余照抄。<b>1 − β(1−t)</b> 这个分母要背熟。</div>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 6</span><span class="ty">计算</span><span class="ti">四部门均衡与外贸乘数</span></div>
+  <div class="eb">
+    <p class="q">在例 3 的基础上加入国外部门：出口 X = 200，进口函数 M = 100 + 0.1Y（γ = 0.1）。求均衡国民收入与外贸乘数。</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">C = 40 + 0.8Y（同例 3）；NX = X − M = 200 − (100 + 0.1Y) = 100 − 0.1Y</p>
+      <p class="st">AE = C + I + G + NX = (40 + 0.8Y) + 300 + 400 + (100 − 0.1Y) = 840 + 0.7Y</p>
+      <p class="st">令 AE = Y：Y = 840 + 0.7Y → 0.3Y = 840 → <b>Y = 2800</b></p>
+      <p class="st">外贸乘数 = 1/(1 − β + γ) = 1/(1 − 0.8 + 0.1) = 1/0.3 ≈ <b>3.33</b></p>
+      <div class="ans"><b>答案：均衡收入 2800，外贸乘数约 3.33。</b>比三部门的 5 小——因为收入上升会带来<b>进口漏出</b>，本国的支出有一部分"漏"去买外国货了。</div>
+      <div class="tip"><b>技巧：</b>四部门题记住分母 <b>1 − β + γ</b>：β 越大乘数越大（爱花钱），γ 越大乘数越小（爱买洋货）。</div>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 7</span><span class="ty">简答</span><span class="ti">节俭悖论与乘数前提</span></div>
+  <div class="eb">
+    <p class="q">"节俭是一种美德，但对于宏观经济可能是灾难。"请结合收入—支出模型评析这一说法。</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">传导链条：人人增加储蓄 → 自发消费 α 下降、β 下降 → 消费曲线下移 → 总支出 AE 下降 → 均衡收入按乘数倍收缩。</p>
+      <p class="st">关键点：均衡时 <b>S = I</b> 且投资由外生给定 → 储蓄意愿上升<b>并不能</b>提高实际储蓄量，收入下降后实际储蓄反而回到原来的水平（甚至更低）。</p>
+      <div class="ans"><b>答案要点：</b>① 在<b>有效需求不足、资源大量闲置</b>时，节俭会压低总需求并通过乘数收缩产出，形成"越省越穷"的节俭悖论；② 但该结论<b>只在萧条期成立</b>——若经济已处于充分就业（供给受限），储蓄增加会压低利率、刺激投资，促进资本积累与长期增长；③ 因此评价节俭要看经济状态，不能一概而论；④ 政策含义：萧条时应鼓励消费与投资（扩内需），充分就业时则应鼓励储蓄与供给能力建设。</div>
+    </div></details>
+  </div>
+</div>
+</section>
+
+<!-- ======================= 第十一章 ======================= -->
+<section class="chapter" id="ch11">
+<div class="ch-head">
+  <h2><em>第十一章</em>国民收入的决定：IS—LM 模型</h2>
+  <p class="oneline">上一章假设利率不变。这一章把<b>利率</b>放进来：产品市场均衡画成 <b>IS</b> 曲线，货币市场均衡画成 <b>LM</b> 曲线，两条线交点决定"收入 + 利率"。<b>全章最高频考点：两条曲线的方程、斜率、移动，以及财政/货币政策效果</b>。</p>
+  <div class="map">
+    <span>IS 方程与斜率</span><span>IS 的移动</span><span>货币需求三动机</span><span>LM 方程与斜率</span>
+    <span>LM 三个区域</span><span>流动性陷阱</span><span>共同均衡求解</span><span>失衡四区域</span>
+    <span>挤出效应</span><span>财政政策效果</span><span>货币政策效果</span><span>凯恩斯极端 vs 古典极端</span>
+  </div>
+</div>
+
+<div class="sec-h"><span class="bar"></span><h3>考点精讲</h3><span class="cnt">12 个考点</span></div>
+
+<div class="kp">
+  <div class="kh"><span class="no">11-1</span><span class="nm">IS 曲线的含义与推导</span><span class="lv">★★★</span><span class="kwd">推导 / 计算</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>利率越高 → 投资越少 → 总需求越少 → 均衡收入越低。所以<b>利率和收入是反着走的</b>，把每一个利率对应的均衡收入点连起来，就是一条向右下方倾斜的 IS 曲线。IS 上的每一点都表示"<b>产品市场供求是平衡的</b>"。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">"<b>I</b>nvestment = <b>S</b>aving（投资 = 储蓄）" 是 IS 的名字来源；记住因果链：<b>r↑ → I↓ → Y↓</b></span>
+      <span class="mnc">"<b>向<b>右下</b>倾斜、斜率为负</b>"——和微观的需求曲线一个方向，好记</span>
+    </div></div>
+    <div class="row"><span class="lb lb-cal">公式</span><div class="ct">
+      <span class="f">两部门：i = s　→　e − dr = −α + (1−β)Y　→　Y = （α + e）/（1 − β）−［d /（1 − β）］r</span>
+      <span class="f">三部门（定量税）：Y = （α + e + G − βT + βTR）/（1 − β）−［d /（1 − β）］r
+三部门（比例税）：Y = （α + e + G + βTR）/［1 − β(1 − t)］−［d /（1 − β(1 − t)）］r</span>
+      <p class="small">推导套路（必会）：① 写 AE = C + I（+ G）；② 令 AE = Y；③ 把含 Y 的项移到左边、其余留右边；④ 整理成 <b>Y = 截距 − 斜率×r</b> 的形式。</p>
+    </div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">11-2</span><span class="nm">IS 的斜率与"谁决定陡峭"</span><span class="lv">★★★</span><span class="kwd">简答</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>IS 的陡缓取决于"利率变动 1 单位能撬动多少收入"：<b>投资对利率越敏感（d 大）</b>，或<b>乘数越大（β 大）</b>，同样降一点利率就能把收入推得很远 → 曲线越<b>平缓</b>。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">"<b>敏感就平，迟钝就陡</b>"　→　d 大（投资敏感）、β 大（乘数大）→ IS 平；d 小、β 小 → IS 陡</span>
+      <span class="mnc">数学记忆：以 Y 为横轴时，IS 的<b>绝对斜率 = (1−β)/d = 1/(乘数×d)</b>　→　乘数或 d 越大，斜率绝对值越小（越平）</span>
+    </div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">11-3</span><span class="nm">IS 曲线的移动（财政政策）</span><span class="lv">★★★</span><span class="kwd">计算</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>凡是<b>直接增加总需求</b>的自主支出（G↑、T↓、TR↑、I 自主增加、X↑），都把 IS 往<b>右</b>推；反之往左。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">"<b>只要是财政扩张，IS 一律右移</b>"；"<b>右移幅度 = 相应乘数 × 政策变化量</b>"</span>
+      <p class="small">例：ΔG = 100、β = 0.8 → IS 水平右移 5×100 = 500。</p>
+    </div></div>
+    <div class="row"><span class="lb lb-cal">公式</span><div class="ct"><span class="f">IS 水平移动量 ΔY<sub>IS</sub> = k × Δ（自主支出）　　k 为对应乘数
+政府购买：ΔY<sub>IS</sub> = ΔG /（1 − β）　　税收：ΔY<sub>IS</sub> = −β·ΔT /（1 − β）</span></div></div>
+    <div class="row"><span class="lb lb-trap">易错</span><div class="ct"><p>区分"<b>曲线移动</b>"和"<b>点沿线移动</b>"：政府买东西增加 → <b>整条 IS 右移</b>；利率变化 → <b>在同一条 IS 上移动</b>。选择题最爱考这个。</p></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">11-4</span><span class="nm">货币需求三动机与货币需求函数</span><span class="lv">★★★</span><span class="kwd">简答 / 计算</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>人们为什么愿意拿着钱？① <b>交易动机</b>：买东西要花钱（收入越高，要留的钱越多）；② <b>预防动机</b>：防备意外（也是收入越高越多）；③ <b>投机动机</b>：等着抄底债券——<b>利率越高，持有货币的机会成本越大，越不愿持币</b>。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">"<b>交易 + 预防看收入（正），投机看利率（负）</b>"　→　L = kY − hr，一个加一个减</span>
+      <span class="mnc">k＝收入敏感度（收入多留钱多），h＝利率敏感度（利率一动就改持币多少）</span>
+    </div></div>
+    <div class="row"><span class="lb lb-cal">公式</span><div class="ct">
+      <span class="f">实际货币需求：L = L<sub>1</sub>(Y) + L<sub>2</sub>(r) = kY − h r　　（k &gt; 0，h &gt; 0）
+实际货币供给：m = M / P　　（M 名义货币量，P 价格水平）
+货币市场均衡：M / P = kY − h r</span>
+      <p class="small">坑：LM 里的货币供给一定是<b>实际</b>货币供给 M/P，不是名义 M。价格变化会改变实际货币供给——这正是第十二章推导 AD 曲线的钥匙。</p>
+    </div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">11-5</span><span class="nm">LM 曲线的方程与斜率</span><span class="lv">★★★</span><span class="kwd">计算</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>收入越高 → 交易需要的钱越多 → 在货币总量固定时，只有<b>利率上升</b>才能让人少持投机性的钱、腾出钱来做交易 → 所以<b>收入越高，均衡利率越高</b>，LM 向右<b>上</b>倾斜。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">"<b>L</b>iquidity preference = <b>M</b>oney supply（货币需求 = 货币供给）" 是 LM 名字来源；因果链：<b>Y↑ → 交易需求↑ → r↑</b></span>
+      <span class="mnc">"<b>k 大则陡（钱需求跟着收入猛涨），h 大则平（利率一动大家就调持币）</b>"</span>
+    </div></div>
+    <div class="row"><span class="lb lb-cal">公式</span><div class="ct">
+      <span class="f">由 M/P = kY − hr 得：r = （k / h）Y − m / h　　或　　Y = （h / k）r + m / k</span>
+      <p class="small">以 Y 为横轴、r 为纵轴时，LM 斜率 = <b>k/h</b>；以 r 为横轴的写法里，斜率 = h/k。答题时<b>先说明横轴是谁</b>，否则容易被扣分。</p>
+    </div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">11-6</span><span class="nm">LM 的三个区域（含流动性陷阱）</span><span class="lv">★★★</span><span class="kwd">简答 / 名词解释</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p><b>凯恩斯区域（水平段）</b>：利率低到不能再低，大家觉得"债券只会跌"，于是<b>给多少货币都愿意拿着</b>——这就是<b>流动性陷阱</b>（也叫凯恩斯陷阱、流动偏好陷阱）。此时 LM 是水平的。<br><b>中间区域</b>：正常向右上倾斜。<br><b>古典区域（垂直段）</b>：利率极高，投机需求为零，货币只用于交易，LM 垂直。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">"<b>低了平（陷阱）、中间斜、高了直（古典）</b>"——从左到右 LM 像一条"<b>躺平 → 爬坡 → 立正</b>"的曲线</span>
+      <span class="mnc">参数对应：<b>水平 ⇔ h → ∞</b>（利率稍动，持币意愿无限变）；<b>垂直 ⇔ h = 0</b>（完全不看利率）</span>
+    </div></div>
+    <div class="row"><span class="lb lb-trap">易错</span><div class="ct"><p>流动性陷阱下：<b>货币政策完全失效</b>（印再多钱也被人攥在手里，利率降不下去、投资不增加，像"用绳子推东西"），而<b>财政政策完全有效</b>（不推高利率，没有挤出）。这是必考的对比结论。</p></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">11-7</span><span class="nm">LM 曲线的移动</span><span class="lv">★★★</span><span class="kwd">计算</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>实际货币供给 m = M/P 增加（央行印钱 M↑，或物价下跌 P↓）→ 同样的收入下钱变多了 → 利率可以更低 → LM 向<b>右下</b>（右）移；反之左移。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct"><span class="mnc">"<b>M 涨、P 跌 → 实际钱变多 → LM 右移</b>"；口诀"<b>钱多右移</b>"</span></div></div>
+    <div class="row"><span class="lb lb-cal">公式</span><div class="ct"><span class="f">由 Y = （h/k）r + m/k 可知：Δm = ΔM/P → LM 水平移动量 ΔY<sub>LM</sub> = Δm / k = ΔM /（kP）</span></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">11-8</span><span class="nm">IS—LM 共同均衡的求解</span><span class="lv">★★★</span><span class="kwd">计算（必考）</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>两个市场要同时摆平：产品市场在 IS 上、货币市场在 LM 上，<b>两条线的交点</b>就是唯一的一组（Y*, r*）。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct"><span class="mnc">解题四步（写下来照做）：<b>① 求 IS → ② 求 LM → ③ 联立消 r → ④ 代回求另一个 + 验算</b></span></div></div>
+    <div class="row"><span class="lb lb-cal">公式</span><div class="ct">
+      <span class="f">IS：Y = A − s·r　　（A 为截距，s 为利率项系数）
+LM：Y = B + f·r　　（B 为截距，f 为利率项系数）
+联立：A − s·r = B + f·r　→　r* = （A − B）/（s + f）
+　　　Y* = A − s·r*　（再代回 LM 验算一遍）</span>
+      <p class="small">万能结论（背下来可秒答小题）：<br>ΔY = ΔA × f/(s+f)（IS 右移 ΔA 时）<br>ΔY = ΔB × s/(s+f)（LM 右移 ΔB 时）<br>Δr = ΔA/(s+f)（IS 右移）　或　Δr = −ΔB/(s+f)（LM 右移）</p>
+    </div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">11-9</span><span class="nm">失衡区域的判断（四个象限）</span><span class="lv">★★</span><span class="kwd">简答 / 图形</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>IS 右边：收入太高，产品<b>供过于求</b>（产品市场超额供给）；IS 左边：<b>需求过旺</b>。<br>LM 右边：收入高→交易需求大→<b>货币需求 &gt; 货币供给</b>；LM 左边：<b>货币供给过剩</b>（人们想把多余货币换成债券，压低利率）。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct"><span class="mnc">"<b>IS 之右：东西卖不掉（供&gt;求）；LM 之右：钱不够用（需&gt;供）</b>"</span>
+    <p class="small">调整方向：不在均衡点时，收入与利率会朝交点方向移动（供过于求→减产；货币供不应求→利率上升）。</p></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">11-10</span><span class="nm">挤出效应与财政政策效果</span><span class="lv">★★★</span><span class="kwd">论述 / 计算</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>政府多花钱 → 收入上升 → 交易需要的钱变多 → 利率被推高 → <b>企业借钱贵了、少投资</b>，于是政府刺激的效果被"挤掉"一部分。这个被挤掉的部分叫<b>挤出效应</b>。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">链条背下来：<b>G↑ → Y↑ → 交易货币需求↑ → r↑ → I↓</b></span>
+      <span class="mnc">"<b>财政怕 LM 陡</b>"：LM 越陡（h 小）→ 利率升得多 → 挤出多 → 财政效果小；LM 水平（陷阱）→ 不升息、无挤出 → 财政效果最大</span>
+      <span class="mnc">"<b>d 大也挤出多</b>"：投资对利率越敏感，同样的利率上升会砍掉更多投资</span>
+    </div></div>
+    <div class="row"><span class="lb lb-cal">公式</span><div class="ct">
+      <span class="f">理论最大效果（利率不变）：ΔY<sub>理论</sub> = k<sub>g</sub> × ΔG
+实际效果（利率可变）：ΔY<sub>实际</sub> = k<sub>g</sub> × ΔG − k<sub>g</sub> × （d × Δr）
+挤出量 = 理论效果 − 实际效果 = 乘数 × 投资减少量</span>
+      <p class="small">算挤出量的两步：① 用两个均衡点算出 Δr；② 投资减少 ΔI = −d × Δr；③ 挤出 = 乘数 × |ΔI|。</p>
+    </div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">11-11</span><span class="nm">货币政策效果与两种极端</span><span class="lv">★★★</span><span class="kwd">论述</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>央行印钱 → LM 右移 → 利率下降 → 投资上升 → 收入上升。<b>IS 越陡（投资对利率不敏感 d 小），同样降息撬动的投资越少 → 货币效果越小</b>；极端情况（IS 垂直或 LM 水平）货币政策完全失效。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">链条：<b>M↑ → r↓ → I↑ → Y↑</b>；"<b>货币怕 IS 平</b>（IS 越平、d 越大，效果反而越大？——注意！这里要分清楚）"</span>
+      <p class="small">准确表述：<b>LM 越陡（h 小）、IS 越平（d 大）→ 货币政策效果越大</b>。用极端法记忆最快：<br>
+      · <b>流动性陷阱</b>（LM 水平）：货币政策<b>无效</b>、财政政策<b>极有效</b>。<br>
+      · <b>古典情形</b>（LM 垂直）：财政政策<b>完全挤出、无效</b>、货币政策<b>极有效</b>。</p>
+    </div></div>
+    <div class="row"><span class="lb lb-cal">对比表</span><div class="ct">
+      <table class="tbl">
+        <tr><th>情形</th><th>LM 形状</th><th>财政政策</th><th>货币政策</th></tr>
+        <tr><td class="k">凯恩斯极端（流动性陷阱）</td><td>水平（h→∞）</td><td>完全有效（无挤出）</td><td>完全无效</td></tr>
+        <tr><td class="k">中间区域</td><td>右上倾斜</td><td>有效，但有部分挤出</td><td>有效</td></tr>
+        <tr><td class="k">古典极端</td><td>垂直（h=0）</td><td>完全挤出、无效</td><td>完全有效</td></tr>
+      </table>
+    </div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">11-12</span><span class="nm">本章评析（IS—LM 的局限）</span><span class="lv">★★</span><span class="kwd">论述</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>IS—LM 把利率引入了收入决定，但它仍然<b>假设价格水平固定</b>（所以只适用于短期），还把预期、供给方、开放经济都排除在外。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct"><span class="mnc">三个"没考虑"：<b>没考虑价格变动（→ 引出 AD—AS）、没考虑预期（→ 引出理性预期学派）、没考虑供给</b></span></div></div>
+  </div>
+</div>
+
+<div class="sec-h"><span class="bar"></span><h3>第十一章 例题</h3><span class="cnt">6 道</span></div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 1</span><span class="ty">计算（核心题型）</span><span class="ti">求 IS、LM 与共同均衡</span></div>
+  <div class="eb">
+    <p class="q">某两部门经济：消费 C = 100 + 0.75Y，投资 I = 175 − 5r；货币需求 L = 0.25Y − 15r，名义货币供给 M = 175，价格水平 P = 1。求：（1）IS 曲线方程；（2）LM 曲线方程；（3）产品市场与货币市场同时均衡时的收入与利率；（4）此时的消费、投资与货币需求（验算）。</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">① 求 IS：AE = C + I = 100 + 0.75Y + 175 − 5r = 275 + 0.75Y − 5r；令 AE = Y → 0.25Y = 275 − 5r → <b>Y = 1100 − 20r</b></p>
+      <p class="st">② 求 LM：M/P = L → 175 = 0.25Y − 15r → 0.25Y = 175 + 15r → <b>Y = 700 + 60r</b></p>
+      <p class="st">③ 联立：1100 − 20r = 700 + 60r → 400 = 80r → <b>r* = 5</b>；Y* = 1100 − 100 = <b>1000</b></p>
+      <p class="st">④ 验算：C = 100 + 750 = 850，I = 175 − 25 = 150，C + I = 1000 = Y ✓；L = 0.25×1000 − 15×5 = 250 − 75 = 175 = M ✓</p>
+      <div class="ans"><b>答案：IS：Y = 1100 − 20r；LM：Y = 700 + 60r；均衡收入 Y* = 1000，均衡利率 r* = 5%。</b></div>
+      <div class="tip"><b>技巧：</b>这类题的满分习惯是<b>代回验算</b>——把 (Y*, r*) 分别代入 C+I 看是否等于 Y、代入 L 看是否等于 M。两处都对，基本不会错。另外注意这里的 r 用"百分数"作单位（r=5 就是 5%）。</div>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 2</span><span class="ty">计算</span><span class="ti">财政扩张与挤出效应</span></div>
+  <div class="eb">
+    <p class="q">承上题。现在政府购买增加 100（其他条件不变）。求：（1）新 IS 曲线；（2）新均衡收入与利率；（3）挤出效应有多大？（4）若利率不变，收入本应增加多少？</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">① 新 IS：0.25Y = 275 + 100 − 5r = 375 − 5r → <b>Y = 1500 − 20r</b>（水平右移 400 = 5×100… 注意：这里乘数 k = 1/(1−0.75) = 4，故右移 4×100 = 400 ✓）</p>
+      <p class="st">② 联立新 IS 与 LM：1500 − 20r = 700 + 60r → 800 = 80r → <b>r = 10</b>；Y = 1500 − 200 = <b>1300</b></p>
+      <p class="st">③ 投资：原 I = 175 − 5×5 = 150；新 I = 175 − 5×10 = 125 → 投资<b>减少 25</b></p>
+      <p class="st">④ 挤出量 = 乘数 × 投资减少量 = 4 × 25 = <b>100</b></p>
+      <p class="st">检验：理论最大 ΔY = 4 × 100 = 400；实际 ΔY = 1300 − 1000 = 300；差额 400 − 300 = <b>100</b> ✓ 与挤出量一致</p>
+      <div class="ans"><b>答案：（1）Y = 1500 − 20r；（2）Y = 1300，r = 10%；（3）挤出效应 100；（4）若利率不变，收入应增 400（实际只增 300）。</b></div>
+      <div class="tip"><b>技巧：</b>挤出效应 = <b>乘数 × d × Δr</b> = 4 × 5 × 5 = 100。公式记牢：<b>挤出 = k·d·Δr</b>。也记住定性结论：<b>LM 越陡、IS 中 d 越大 → 挤出越大 → 财政效果越小</b>。</div>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 3</span><span class="ty">计算</span><span class="ti">货币政策效果</span></div>
+  <div class="eb">
+    <p class="q">承例 1（未加政府购买）。中央银行把名义货币供给从 175 增加到 225。求新均衡收入与利率，并说明货币政策传导链条。</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">新 LM：0.25Y − 15r = 225 → 0.25Y = 225 + 15r → <b>Y = 900 + 60r</b></p>
+      <p class="st">联立 IS（Y = 1100 − 20r）：1100 − 20r = 900 + 60r → 200 = 80r → <b>r = 2.5</b>；Y = 1100 − 50 = <b>1050</b></p>
+      <p class="st">对比原均衡：Y 从 1000 → 1050（+50），r 从 5% → 2.5%（下降 2.5 个百分点）</p>
+      <div class="ans"><b>答案：新均衡 Y = 1050，r = 2.5%。</b>传导链条：<b>M↑ → 实际货币供给↑ → LM 右移 → r↓ → I↑（投资从 150 增至 162.5）→ Y↑</b>。</div>
+      <div class="tip"><b>技巧：</b>货币政策题的关键是先判断 LM 移动量：ΔY<sub>LM</sub> = ΔM/(kP) = 50/(0.25×1) = 200。再用"万能结论"ΔY = ΔB × s/(s+f) = 200 × 20/(20+60) = 50 直接得答案，不用重新解方程。</div>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 4</span><span class="ty">简答</span><span class="ti">流动性陷阱下为什么货币失灵、财政灵验</span></div>
+  <div class="eb">
+    <p class="q">什么是流动性陷阱？在流动性陷阱中，为什么货币政策无效而财政政策完全有效？</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">定义：利率极低时，人们预期利率只会上升（债券价格只会下跌），因此<b>无论增加多少货币供给都会被人们以现金形式持有</b>，投机性货币需求变得无限大（h → ∞），LM 呈水平状。</p>
+      <p class="st">货币无效：增发货币无法使利率进一步下降 → 投资不增加 → 收入不变（形象说法："货币政策像一根绳子，只能拉不能推"）。</p>
+      <p class="st">财政完全有效：政府支出增加使 IS 右移，由于 LM 水平，收入上升<b>不会</b>推高利率 → 投资不被挤出 → 财政乘数的作用<b>完全发挥</b>。</p>
+      <div class="ans"><b>答案要点：</b>① 定义（利率极低、投机需求无限大、LM 水平）；② 货币政策的传导链条在"r↓"这一环断裂，故无效；③ 财政政策不引起利率上升，挤出效应为零，故完全有效；④ 政策含义：危机中若陷入流动性陷阱，应主要依靠<b>财政政策</b>与非常规货币工具（量化宽松、预期管理）配合。</div>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 5</span><span class="ty">计算</span><span class="ti">曲线移动量的计算</span></div>
+  <div class="eb">
+    <p class="q">已知 β = 0.75，政府购买乘数 k = 4，货币需求函数 L = 0.25Y − 15r，P = 1。（1）政府购买增加 60，IS 曲线水平移动多少？（2）货币供给增加 40，LM 曲线水平移动多少？（3）政府税收减少 80（定量税），IS 移动多少、方向如何？</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">（1）ΔY<sub>IS</sub> = k<sub>g</sub> × ΔG = 4 × 60 = <b>240（右移）</b></p>
+      <p class="st">（2）ΔY<sub>LM</sub> = ΔM /（k<sub>货币需求</sub> × P）= 40 /（0.25 × 1） = <b>160（右移）</b></p>
+      <p class="st">（3）ΔY<sub>IS</sub> = k<sub>t</sub> × ΔT = [−β/(1−β)] × (−80) = (−3) × (−80) = <b>+240（右移）</b></p>
+      <div class="ans"><b>答案：（1）右移 240；（2）右移 160；（3）右移 240。</b></div>
+      <div class="tip"><b>技巧：</b>税收的"减税"是 ΔT &lt; 0，乘数是负的，<b>负 × 负 = 正</b>，所以减税使 IS 右移。记不住就记结果：<b>凡是扩张性的，一律右移</b>。</div>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 6</span><span class="ty">论述</span><span class="ti">财政政策效果的影响因素</span></div>
+  <div class="eb">
+    <p class="q">用 IS—LM 模型分析：扩张性财政政策的效果受哪些因素影响？什么情况下会出现"完全挤出"？</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">传导：G↑ → IS 右移 → Y↑ 且 r↑ → r↑ 抑制私人投资（挤出）→ 削弱政策效果。</p>
+      <p class="st">影响因素一：<b>LM 斜率（h）</b>。LM 越陡（h 小，货币需求对利率不敏感），收入上升带来的交易需求必须靠<b>大幅升息</b>来平衡，挤出越大，财政效果越小。</p>
+      <p class="st">影响因素二：<b>投资利率敏感度 d</b>。d 越大，同样的利率升幅会砍掉更多投资，挤出越大，且 IS 越平缓。</p>
+      <p class="st">影响因素三：<b>乘数（β）</b>。β 大则乘数大，IS 移动幅度大，但同时也放大挤出的传递。</p>
+      <div class="ans"><b>答案要点：</b>① 效果大小取决于挤出效应；② LM 越陡、d 越大 → 挤出越大 → 效果越小；③ <b>完全挤出</b>出现在<b>古典情形（LM 垂直）</b>：收入上升完全被利率上升抵消，私人投资下降量恰好等于政府支出增加量，收入不变，只留下利率上升与物价上涨的压力；④ <b>零挤出</b>出现在流动性陷阱（LM 水平）。</div>
+    </div></details>
+  </div>
+</div>
+</section>
+
+<!-- ======================= 第十二章 ======================= -->
+<section class="chapter" id="ch12">
+<div class="ch-head">
+  <h2><em>第十二章</em>国民收入的决定：AD—AS 模型</h2>
+  <p class="oneline">IS—LM 还假设价格不变。这一章把<b>价格也放开</b>：价格变化 → 实际货币供给 M/P 变化 → LM 移动 → 每个价格对应一个收入，连起来就是 <b>AD 曲线</b>；再加上反映企业供给意愿的 <b>AS 曲线</b>，就得到分析短期波动的完整工具。核心考点：<b>AD 的推导与三大效应、AS 的三种形状、需求/供给冲击</b>。</p>
+  <div class="map">
+    <span>AD 三大效应</span><span>由 IS-LM 推导 AD</span><span>AD 的移动</span><span>AS 三种形状</span>
+    <span>粘性工资/价格/错觉</span><span>潜在产出与长期 AS</span><span>AD-AS 三种均衡情形</span>
+    <span>需求冲击</span><span>供给冲击与滞胀</span><span>稳定政策取舍</span><span>三模型比较</span>
+  </div>
+</div>
+
+<div class="sec-h"><span class="bar"></span><h3>考点精讲</h3><span class="cnt">11 个考点</span></div>
+
+<div class="kp">
+  <div class="kh"><span class="no">12-1</span><span class="nm">AD 曲线的含义与向右下方倾斜的三个效应</span><span class="lv">★★★</span><span class="kwd">简答 / 论述</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p><b>总需求曲线</b>说的是"物价水平与社会愿意购买的总量之间的关系"，物价越贵，大家买得越少，所以向右下方倾斜。原因有三条：<br>① <b>利率效应</b>：价涨 → 手里的钱不值钱（实际货币供给减少）→ 利率上升 → 投资减少；<br>② <b>实际余额效应（财富效应）</b>：价涨 → 居民实际财富缩水 → 消费减少；<br>③ <b>税收效应 / 汇率效应（开放经济）</b>：价涨 → 名义收入上升被推入更高税率档次、且本国货变贵 → 消费与净出口减少。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">三效应顺口溜：<b>"价涨 → 钱紧 → 利率升 → 投资减；价涨 → 钱毛 → 消费减；价涨 → 国货贵 → 出口减"</b></span>
+      <span class="mnc">最核心的一条是 <b>利率效应</b>（它也正是从 IS—LM 推导 AD 的机制）</span>
+    </div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">12-2</span><span class="nm">由 IS—LM 推导 AD 曲线（重点计算）</span><span class="lv">★★★</span><span class="kwd">推导 / 计算</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>让价格 P 变一变：P 上升 → 实际货币供给 M/P 变小 → LM 左移 → 利率升、收入降。于是"高价格 ↔ 低收入"，把这些点连起来就是 AD。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">四步法：<b>① 写 IS（不含 P）→ ② 写 LM（含 M/P）→ ③ 从 LM 解出 r 代入 IS → ④ 整理成 Y = f(P)</b></span>
+      <span class="mnc">"<b>P 在 LM 里，不在 IS 里</b>"——这是推导的全部秘密</span>
+    </div></div>
+    <div class="row"><span class="lb lb-cal">公式</span><div class="ct">
+      <span class="f">IS：Y = A − s·r
+LM：kY − h·r = M/P　→　r = （kY − M/P）/ h
+代入 IS 得：Y = A − （s/h）（kY − M/P）
+　　　　　　→ Y（1 + s·k/h） = A + （s·M/h）/ P
+　　　　　　→ <b>AD：Y = A/（1 + sk/h） + ［sM/h］/［（1 + sk/h）·P］</b></span>
+      <p class="small">形式记忆：AD 一定长成 <b>Y = 常数 + 常数/P</b> 的样子（P 在分母里，所以 P 越高 Y 越低）。</p>
+    </div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">12-3</span><span class="nm">AD 曲线的移动与斜率</span><span class="lv">★★★</span><span class="kwd">简答</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>在<b>同一个价格水平</b>下，任何让总支出增加的东西（G↑、T↓、M↑、I 自主↑、X↑、消费信心↑）都把 AD 往<b>右</b>推。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct"><span class="mnc">"<b>财政扩张、货币扩张 → AD 一律右移</b>"（紧缩则左移）；"<b>价格变 → 点沿 AD 移动；政策变 → 整条 AD 移动</b>"</span></div></div>
+    <div class="row"><span class="lb lb-cal">斜率</span><div class="ct"><span class="f">AD 越平坦 ⇔ 货币需求的利率敏感度 h 越大、投资敏感度 d 越大、k 越小
+（即：IS—LM 中货币政策传导越顺畅，AD 越平）</span></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">12-4</span><span class="nm">AS 曲线的三种形状</span><span class="lv">★★★</span><span class="kwd">简答 / 图形</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p><b>凯恩斯段（水平）</b>：经济很冷，大量机器和工人闲着，企业可以<b>在不涨价的情况下无限量供货</b>——价格刚性。<br><b>常规段（向右上倾斜）</b>：越接近满负荷，想再增产就得涨工资、涨原料价，<b>成本推着价格往上走</b>。<br><b>古典段（垂直）</b>：已经满负荷，再多需求也只能<b>涨价</b>，产量一点不增（长期总供给 = 潜在产出）。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">"<b>冷了平（随叫随到）、中间斜（越干越贵）、满了直（加钱也不干）</b>"——想象工厂从"闲置"到"加班"到"三班倒满负荷"</span>
+      <span class="mnc">"<b>短期斜、长期直</b>"：短期有价格粘性，长期价格和工资都能充分调整，产出回到<b>潜在产出</b>（长期 AS 垂直）</span>
+    </div></div>
+    <div class="row"><span class="lb lb-trap">易错</span><div class="ct"><p>长期 AS 垂直的位置就是<b>潜在产出</b>（自然率水平的产出），它<b>不受价格影响</b>，只由资本、劳动、技术决定。移动长期 AS 必须靠"提高生产能力"（技术进步、资本积累、制度改革），靠印钱是移不动的。</p></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">12-5</span><span class="nm">短期 AS 向右上倾斜的三种解释</span><span class="lv">★★</span><span class="kwd">简答</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>① <b>粘性工资</b>：工资合同定死了，物价涨了 → 企业卖得贵、工资没涨 → 实际工资下降 → 多雇人、多生产。<br>② <b>粘性价格</b>：菜单成本使部分企业来不及调价，物价总水平上升时它们相对便宜 → 销量大增 → 增产。<br>③ <b>错觉理论</b>：企业只看到自己产品价格涨，误以为是"相对价格涨了"（没意识到整体物价都涨），于是扩大生产。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct"><span class="mnc">"<b>工资没跟上、价格没改价、老板看错了</b>"——三个"信息/调整滞后"造成短期 AS 向上斜</span>
+    <p class="small">共同本质：<b>名义变量调整有粘性、预期不完全</b>。长期里这些错觉和粘性都会消失，所以长期 AS 垂直。</p></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">12-6</span><span class="nm">AS 曲线的移动</span><span class="lv">★★★</span><span class="kwd">简答</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>凡是<b>改变生产成本或生产能力</b>的因素都移动 AS：成本上升（工资涨、原材料/能源涨价、加税）→ 短期 AS <b>左移</b>（同样的价格只肯少生产）；技术进步、资本增加、劳动力增加、制度改善 → 长期与短期 AS <b>右移</b>。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct"><span class="mnc">"<b>成本涨 → 左移（供给收缩）；能力强 → 右移（供给扩张）</b>"</span>
+    <p class="small">注意区分"沿 AS 的移动"（价格水平变）和"AS 的移动"（成本、技术变）。考试常给一个事件让你判断移动方向：油价暴涨→左移；全民教育水平提高→右移。</p></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">12-7</span><span class="nm">AD—AS 均衡的三种情形</span><span class="lv">★★★</span><span class="kwd">简答 / 图形</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>AD 移动的效果，取决于它落在 AS 的哪一段：<b>水平段</b>（萧条）→ 只增产不涨价；<b>倾斜段</b>（常态）→ 又增产又涨价；<b>垂直段</b>（满负荷）→ 只涨价不增产（货币中性）。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <table class="tbl">
+        <tr><th>AS 所处区段</th><th>经济状态</th><th>AD 右移的结果</th><th>政策含义</th></tr>
+        <tr><td class="k">凯恩斯段（水平）</td><td>严重衰退、大量闲置</td><td>产量大增，价格不变</td><td>刺激需求非常划算</td></tr>
+        <tr><td class="k">中间段（右上）</td><td>常态</td><td>产量与价格同涨</td><td>刺激有代价（通胀）</td></tr>
+        <tr><td class="k">古典段（垂直）</td><td>充分就业</td><td>价格大涨，产量不变</td><td>刺激只会带来通胀</td></tr>
+      </table>
+      <span class="mnc">口诀：<b>"冷了增产不涨价，满了涨价不增产，中间两个一起来"</b></span>
+    </div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">12-8</span><span class="nm">需求冲击的短期与长期调整</span><span class="lv">★★★</span><span class="kwd">论述 / 计算</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>比如央行多印钱：短期价格还没反应过来（价格粘性），实际货币增多 → 利率降 → 产出上升（超过潜在水平）；但长期价格会涨上来，把实际货币供给"吃回去"，产出回到潜在水平，<b>只剩下价格上升</b>。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">"<b>短期动产量，长期动价格</b>"；"<b>货币在短期非中性，在长期中性</b>"</span>
+      <p class="small">自我修正机制：产出高于潜在 → 工资成本上升 → 短期 AS 左移 → 价格继续涨、产出回落，直到回到潜在产出。</p>
+    </div></div>
+    <div class="row"><span class="lb lb-cal">计算思路</span><div class="ct"><span class="f">短期：先按价格粘性令 P = P<sub>0</sub> 代入 AD 求 Y<sub>短</sub>
+长期：令 Y = 潜在产出 Ȳ 代入 AD，解出新的 P<sub>长</sub></span></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">12-9</span><span class="nm">供给冲击与滞胀</span><span class="lv">★★★</span><span class="kwd">论述</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>石油暴涨之类的成本冲击把 AS 往<b>左</b>推：企业成本上升 → 减产 + 涨价 → 于是<b>物价上涨</b>和<b>产出下降、失业上升</b>同时出现，这就是<b>滞胀</b>（停滞 + 通胀）。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">判别口诀：<b>"需求冲击：价量同向；供给冲击：价量反向"</b></span>
+      <span class="mnc"><b>滞胀 = 高通胀 + 高失业</b>（AD—AS 图上：AS 左移，均衡点向左上方移动）</span>
+    </div></div>
+    <div class="row"><span class="lb lb-trap">易错</span><div class="ct"><p>滞胀<b>不能用</b>扩张性需求政策解决：刺激需求虽然能拉回产出，但会让物价更上一层楼；而要压通胀就得紧缩，又会让失业更严重。这是<b>政策两难</b>，正确答案通常是"短期需求管理 + 长期供给端政策（技术进步、降低对能源依赖、提高劳动力流动性）"。</p></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">12-10</span><span class="nm">稳定政策的取舍（要不要干预）</span><span class="lv">★★</span><span class="kwd">论述</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>对<b>需求冲击</b>：政策可以对冲（AD 左移就刺激、右移就紧缩），能同时稳住产出和物价，所以"积极干预"有道理。<br>对<b>供给冲击</b>：政策无法两全，只能二选一（保就业就接受通胀、压通胀就接受衰退），所以干预效果有限。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct"><span class="mnc">"<b>需求冲击可对冲，供给冲击只能二选一</b>"；答题加一句"<b>政策存在时滞与不确定性，过猛的干预本身也可能成为波动来源</b>"</span></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">12-11</span><span class="nm">三个国民收入决定模型的比较</span><span class="lv">★★★</span><span class="kwd">论述 / 表格</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>三个模型层层"解锁变量"：收入—支出模型（价格、利率都冻住）→ IS—LM（解锁利率）→ AD—AS（再解锁价格）。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <table class="tbl">
+        <tr><th>模型</th><th>价格</th><th>利率</th><th>决定什么</th><th>适用</th></tr>
+        <tr><td class="k">收入—支出（45°线）</td><td>不变</td><td>不变</td><td>只决定收入 Y</td><td>最简单的需求决定</td></tr>
+        <tr><td class="k">IS—LM</td><td>不变</td><td>可变</td><td>决定 Y 与 r</td><td>分析财政/货币政策效果</td></tr>
+        <tr><td class="k">AD—AS</td><td>可变</td><td>可变（隐含）</td><td>决定 Y 与 P</td><td>分析通胀、滞胀、冲击</td></tr>
+      </table>
+      <span class="mnc">"<b>一层一层解冻：先解冻利率，再解冻价格</b>"</span>
+    </div></div>
+  </div>
+</div>
+
+<div class="sec-h"><span class="bar"></span><h3>第十二章 例题</h3><span class="cnt">5 道</span></div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 1</span><span class="ty">计算（核心题型）</span><span class="ti">由 IS—LM 推导 AD 曲线</span></div>
+  <div class="eb">
+    <p class="q">已知 IS 曲线为 Y = 900 − 20r，货币需求 L = 0.25Y − 10r，名义货币供给 M = 150，价格水平为 P。求总需求曲线 AD 的方程；当 P = 1 时的收入与利率。</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">写 LM（含 P）：0.25Y − 10r = 150/P → r = 0.025Y − 15/P</p>
+      <p class="st">代入 IS：Y = 900 − 20(0.025Y − 15/P) = 900 − 0.5Y + 300/P</p>
+      <p class="st">整理：1.5Y = 900 + 300/P → <b>AD：Y = 600 + 200/P</b></p>
+      <p class="st">P = 1 时：Y = 600 + 200 = <b>800</b>；r = 0.025×800 − 15 = 20 − 15 = <b>5</b></p>
+      <div class="ans"><b>答案：AD 曲线 Y = 600 + 200/P；P = 1 时 Y = 800，r = 5%。</b></div>
+      <div class="tip"><b>技巧：</b>记住 AD 的<b>标准长相</b>：<b>Y = 常数 + 常数/P</b>。推导时只要把 r 从 LM 里解出来塞进 IS，剩下的就是合并同类项。检验方法：把 P 加倍，Y 应该变小。</div>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 2</span><span class="ty">计算</span><span class="ti">短期均衡（价格粘性）</span></div>
+  <div class="eb">
+    <p class="q">承上题。设短期总供给曲线为 Y = 800 + 200(P − 1)（潜在产出为 800）。求短期均衡的价格水平与产出，并判断经济处于什么状态。</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">联立 AD 与 AS：600 + 200/P = 800 + 200(P − 1) = 600 + 200P</p>
+      <p class="st">→ 200/P = 200P → P<sup>2</sup> = 1 → <b>P = 1</b>；Y = 600 + 200 = <b>800</b></p>
+      <p class="st">此时 Y = 潜在产出 800，价格水平等于预期水平（P = 1）</p>
+      <div class="ans"><b>答案：短期均衡 P = 1，Y = 800。</b>经济恰好处于<b>潜在产出水平</b>（既无衰退缺口也无通胀缺口），这是分析的起点。</div>
+      <div class="tip"><b>技巧：</b>AS 写成 <b>Y = Ȳ + λ(P − P<sup>e</sup>)</b> 的形式最好用：P = P<sup>e</sup> 时产出正好等于潜在产出 Ȳ。看到题目给的 AS，先找它的"潜在产出"和"预期价格"这两个锚点。</div>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 3</span><span class="ty">计算</span><span class="ti">需求冲击：短期效应与长期调整</span></div>
+  <div class="eb">
+    <p class="q">承上，中央银行把货币供给由 150 增至 225。（1）求新的 AD 曲线；（2）价格粘性在 P = 1 时的短期均衡；（3）长期中产出回到潜在水平 800 时的价格水平与利率。</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">（1）新 LM：0.25Y − 10r = 225/P → r = 0.025Y − 22.5/P；代入 IS：Y = 900 − 0.5Y + 450/P → <b>新 AD：Y = 600 + 300/P</b></p>
+      <p class="st">（2）短期 P = 1（粘性）：Y = 600 + 300 = <b>900</b>（超过潜在产出 800，出现<b>通胀缺口</b>）</p>
+      <p class="st">（3）长期 Y = 800：800 = 600 + 300/P → 300/P = 200 → <b>P = 1.5</b>；r = 0.025×800 − 22.5/1.5 = 20 − 15 = <b>5</b></p>
+      <div class="ans"><b>答案：（1）AD：Y = 600 + 300/P；（2）短期 Y = 900（超额繁荣）；（3）长期 P = 1.5、Y = 800、利率回到 5%。</b>
+      结论：<b>货币扩张在短期能把产出推到 900，但长期只剩价格从 1 涨到 1.5（上涨 50%），产出回到 800</b>——这就是"短期非中性、长期中性"。</div>
+      <div class="tip"><b>技巧：</b>这类题固定三问套路：<b>短期令 P = P<sub>0</sub> 代 AD 求 Y；长期令 Y = 潜在产出 代 AD 解 P</b>。中间情形（AS 倾斜）则联立 AD 与 AS 解二次方程。</div>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 4</span><span class="ty">计算 + 论述</span><span class="ti">不利供给冲击与滞胀</span></div>
+  <div class="eb">
+    <p class="q">承例 2 的初始状态（AD：Y = 600 + 200/P，AS：Y = 800 + 200(P − P<sup>e</sup>)，P<sup>e</sup> = 1，潜在产出 800）。假设国际能源价格暴涨，使预期价格水平由 1 上升到 1.25。（1）求新均衡的价格与产出；（2）说明这是何种现象，政策上有什么两难。</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">新 AS：Y = 800 + 200(P − 1.25) = 550 + 200P</p>
+      <p class="st">联立 AD：600 + 200/P = 550 + 200P → 50 + 200/P = 200P</p>
+      <p class="st">→ 200P<sup>2</sup> − 50P − 200 = 0 → 4P<sup>2</sup> − P − 4 = 0 → P = （1 + √65）/8 ≈ <b>1.13</b></p>
+      <p class="st">Y = 600 + 200/1.13 ≈ <b>777</b></p>
+      <div class="ans"><b>答案：（1）新均衡 P ≈ 1.13，Y ≈ 777。</b>价格由 1 涨到 1.13（<b>通胀</b>），产出由 800 降到 777（低于潜在产出，<b>失业上升</b>）——这正是<b>滞胀</b>。<br>
+      （2）政策两难：若用扩张性政策把产出拉回 800，物价会进一步上涨；若用紧缩政策压物价，产出与就业会更糟。<b>需求管理无法同时解决二者</b>，只能辅以供给端政策（节能技术、产业转型、降低对进口能源依赖、提高劳动市场灵活性），并忍受一个痛苦的调整期。</div>
+      <div class="tip"><b>判别技巧（秒杀选择题）：</b>看到"油价/工资/原材料大涨" → <b>AS 左移</b> → 价涨量减 → <b>滞胀</b>；看到"政府减税/央行降息/消费信心暴涨" → <b>AD 右移</b> → 价量同涨。</div>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 5</span><span class="ty">简答</span><span class="ti">三种 AS 情形下 AD 移动的效应</span></div>
+  <div class="eb">
+    <p class="q">画图说明：在凯恩斯情形、中间情形和古典情形下，总需求曲线右移分别对产出和价格水平有什么影响？并指出其政策含义。</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">凯恩斯情形（AS 水平）：AD 右移 → 产出大幅增加，价格水平<b>不变</b>。政策含义：严重衰退时刺激需求收益最大、几乎无通胀代价。</p>
+      <p class="st">中间情形（AS 右上倾斜）：AD 右移 → 产出与价格<b>同向上升</b>。政策含义：刺激有效但伴随通胀，需要在就业与物价之间权衡。</p>
+      <p class="st">古典情形（AS 垂直）：AD 右移 → 产出<b>不变</b>，价格<b>同比例上升</b>。政策含义：充分就业时刺激需求只会造成通胀，长期应着力提高供给能力（技术、人力资本、制度）。</p>
+      <div class="ans"><b>答案要点：</b>三句话总结——<b>"冷了增产不涨价，中间两个一起来，满了涨价不增产"</b>。政策含义对应"萧条靠需求、过热靠供给"。</div>
+    </div></details>
+  </div>
+</div>
+</section>
+
+<!-- ======================= 第十三章 ======================= -->
+<section class="chapter" id="ch13">
+<div class="ch-head">
+  <h2><em>第十三章</em>失业、通货膨胀和经济周期</h2>
+  <p class="oneline">这一章是"用模型解释现实"：用 AD—AS 框架解释<b>失业</b>和<b>通胀</b>两大病症，再用<b>菲利普斯曲线</b>把两者联系起来，最后讲<b>经济周期</b>。<b>全章最高频：奥肯定律、通胀三成因、菲利普斯曲线短长期之分、经济周期四类</b>。</p>
+  <div class="map">
+    <span>失业的宏观解释</span><span>工资刚性</span><span>奥肯定律</span><span>通胀定义与类型</span>
+    <span>需求拉动</span><span>成本推动</span><span>结构性通胀</span><span>通胀的成本</span>
+    <span>菲利普斯曲线</span><span>适应性预期</span><span>理性预期</span><span>长期 PC 垂直</span>
+    <span>牺牲率</span><span>通缩与滞胀</span><span>经济周期四阶段</span><span>周期四类</span>
+  </div>
+</div>
+
+<div class="sec-h"><span class="bar"></span><h3>考点精讲</h3><span class="cnt">13 个考点</span></div>
+
+<div class="kp">
+  <div class="kh"><span class="no">13-1</span><span class="nm">失业的宏观经济学解释</span><span class="lv">★★★</span><span class="kwd">简答 / 论述</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>失业的两大来源：① <b>总需求不足</b>——经济冷了，企业不需要那么多人（周期性失业）；② <b>工资降不下来</b>——工资有"刚性"，劳动市场像商品市场一样"卖不出去"却不肯降价，于是有人找不到工作。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">工资刚性的四大理由：<b>最低工资法、工会集体谈判、效率工资、内部人—外部人</b></span>
+      <span class="mnc">口诀："<b>法定底线、工会撑腰、老板怕偷懒、老人护饭碗</b>"</span>
+      <p class="small">效率工资：老板故意给高工资，让工人不敢偷懒、减少离职、招到更优秀的人 → 工资高于市场出清水平 → 有人失业。</p>
+    </div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">13-2</span><span class="nm">失业的影响与奥肯定律</span><span class="lv">★★★</span><span class="kwd">计算 / 简答</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>失业率每比自然失业率<b>高出 1 个百分点</b>，实际 GDP 就会比潜在 GDP<b>低大约 2%</b>。失业不是"几个人的事"，它是真金白银的产出损失。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">"<b>1 个失业 → 2 个产出</b>"（超自然失业率 1%，产出缺口 −2%）</span>
+      <span class="mnc">公式记忆：<b>（Y − Y*）/ Y* = −α（u − u*）</b>，α ≈ 2；注意负号——失业越高，产出越低于潜在</span>
+    </div></div>
+    <div class="row"><span class="lb lb-cal">公式</span><div class="ct">
+      <span class="f">奥肯定律：（Y − Y*）/ Y* = − α（u − u*）　　（α ≈ 2）
+等价写法：失业率每上升 1 个百分点，实际 GDP 增长率约下降 2 个百分点（相对潜在增速）</span>
+      <p class="small">计算三步：① 算失业率缺口 u − u*；② 乘 −α 得产出缺口率；③ 用潜在 GDP 换算出实际 GDP 或产出损失。</p>
+    </div></div>
+    <div class="row"><span class="lb lb-trap">易错</span><div class="ct"><p>奥肯定律是<b>经验规律</b>（教材特别强调：它只是对美国经济现象的总结，没有严格检验，会因时因地而异），答题时要补一句"数量关系不一定准确，只具参考意义"，这是加分点。</p></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">13-3</span><span class="nm">通货膨胀的定义与类型</span><span class="lv">★★★</span><span class="kwd">名词解释 / 选择</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>通货膨胀 = 物价总水平<b>普遍、持续、显著</b>上涨。三个关键词缺一不可：不是个别商品涨（普遍）、不是一次性涨价（持续）、不是微小波动（显著）。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">按程度分：<b>爬行（温和）→ 奔腾 → 恶性</b>　联想"散步、跑步、狂奔"</span>
+      <span class="mnc">按预期分：<b>预期到的 / 未预期到的</b>；按成因分：<b>需求拉动 / 成本推动 / 结构性</b></span>
+    </div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">13-4</span><span class="nm">通胀的三大成因（必考）</span><span class="lv">★★★</span><span class="kwd">简答 / 论述</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>① <b>需求拉动</b>：想买的人太多——"过多的货币追逐过少的商品"（AD 右移）；<br>② <b>成本推动</b>：造东西变贵了——工资涨、原材料（石油）涨，企业被迫提价（AS 左移）；<br>③ <b>结构性</b>：有的行业涨、有的不涨，但工资互相攀比，成本被抬上去。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">"<b>需求拉 = 抢的人多；成本推 = 造的贵；结构性 = 攀比跟风</b>"</span>
+      <span class="mnc">图形对应（超好用）：<b>需求拉动 → AD 右移（价涨量增）；成本推动 → AS 左移（价涨量减＝滞胀）</b></span>
+      <p class="small">货币主义的说法（弗里德曼）："<b>通货膨胀无论何时何地都是一种货币现象</b>"——这句话是名句，论述题可直接引用。</p>
+    </div></div>
+    <div class="row"><span class="lb lb-trap">易错</span><div class="ct"><p>区分"一次性的价格水平上升"和"持续的通货膨胀"：只有<b>货币供给持续扩张</b>才能维持持续通胀（通胀惯性）。这是货币主义的核心观点，常考。</p></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">13-5</span><span class="nm">通货膨胀的影响（成本）</span><span class="lv">★★★</span><span class="kwd">简答</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p><b>预期到的通胀</b>：主要带来"麻烦"——频繁改价签（菜单成本）、少存钱多跑银行（鞋底成本）、税收被通胀推高档次（税收扭曲）、比价混乱。<br><b>没预期到的通胀</b>：主要带来"<b>抢劫</b>"——财富在债权人和债务人之间重新分配。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">"<b>欠钱的笑，存钱的哭</b>"：通胀使债务人受益（还的钱不值钱了）、债权人受损；拿固定工资和养老金的人受损，利润收入者往往受益</span>
+      <span class="mnc">预期到的四类成本：<b>菜单成本、鞋底成本、税收扭曲、相对价格混乱</b>　→　"<b>菜单鞋底税收乱</b>"</span>
+    </div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">13-6</span><span class="nm">菲利普斯曲线：从总供给曲线到通胀—失业替代</span><span class="lv">★★★</span><span class="kwd">推导 / 简答</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>菲利普斯曲线其实就是"<b>换了个马甲的总供给曲线</b>"：产出高 → 失业低 → 工资、物价涨得快 → 通胀高。所以通胀和失业在<b>短期</b>是"跷跷板"，此消彼长。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">"<b>PC = 另一个版本的 AS 曲线</b>"（教材原话）；"<b>短期负斜率，长期垂直</b>"</span>
+      <span class="mnc">推导逻辑：<b>Y 高 → u 低 → P 涨得快 → π 高</b></span>
+    </div></div>
+    <div class="row"><span class="lb lb-cal">公式</span><div class="ct">
+      <span class="f">短期总供给：Y = Y* + α（P − P<sup>E</sup>） + v　　<span class="cm">教材式（13.6）</span>
+菲利普斯曲线：π = π<sup>e</sup> − ε（u − u*） + v
+　　π：实际通胀率　π<sup>e</sup>：预期通胀率　u*：自然失业率　v：供给冲击</span>
+      <p class="small">读公式的口诀：<b>失业低于自然率（u &lt; u*）→ 括号为负 → 通胀高于预期</b>；反之亦然。供给冲击 v &gt; 0（如油价暴涨）直接把整条曲线往上抬。</p>
+    </div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">13-7</span><span class="nm">适应性预期与通胀加速</span><span class="lv">★★★</span><span class="kwd">计算 / 论述</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p><b>适应性预期</b>：人们"<b>看后视镜开车</b>"——用过去的通胀来猜未来的通胀（π<sup>e</sup> = π<sub>−1</sub>）。后果：政府若想长期把失业压在自然率以下，就必须让通胀<b>一年比一年高</b>（加速），否则失业就会回到自然率。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">"<b>适应性预期 = 拿昨天猜明天；理性预期 = 用尽所有信息</b>"</span>
+      <span class="mnc">"<b>想靠通胀买就业，得年年加码，最后只剩通胀</b>"——这就是"通胀加速"与"自然率假说"</span>
+    </div></div>
+    <div class="row"><span class="lb lb-cal">公式</span><div class="ct">
+      <span class="f">极端适应性预期：π<sup>e</sup> = π<sub>−1</sub>　→　π = π<sub>−1</sub> − ε（u − u*） + v　<span class="cm">教材式（13.12）</span>
+结论：维持 u &lt; u* 需 π &gt; π<sub>−1</sub>（通胀逐年加速）；
+　　　若 u = u* 且 v = 0，则 π = π<sub>−1</sub>（通胀稳定不变，即"惯性通胀"）</span>
+    </div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">13-8</span><span class="nm">长期菲利普斯曲线与自然率假说</span><span class="lv">★★★</span><span class="kwd">论述</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>短期可以用通胀"骗"来一点就业，但工人迟早发现"物价涨了、实际工资没涨"，就会要求加工资、减少劳动供给 → 失业回到自然率，只剩下更高的通胀。把各期的结果连起来，就是<b>一条垂直于自然失业率的长期菲利普斯曲线</b>。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">"<b>短期有替代，长期没替代；骗得了一次，骗不了一世</b>"</span>
+      <span class="mnc">短期 PC 移动规律：<b>π<sup>e</sup> 上升 → 整条短期 PC 向上平移</b>（预期通胀是多少，PC 就从那个高度出发）</span>
+    </div></div>
+    <div class="row"><span class="lb lb-trap">易错</span><div class="ct"><p>长期 PC 垂直的位置是 <b>u*</b>（自然失业率），而 u* 本身<b>不是常数</b>——它受劳动力结构、制度、技术影响会变（教材特别强调"不是一个固定不变的量"）。</p></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">13-9</span><span class="nm">理性预期与政策无效性命题</span><span class="lv">★★★</span><span class="kwd">论述</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p><b>理性预期</b>：人们会利用<b>所有可得信息</b>（包括"政府要干什么"）来形成预期，不会系统性犯错。于是：<b>被公众预料到的</b>货币扩张，只会立刻反映为物价和预期上涨，<b>失业一点不降</b>；只有<b>没预料到</b>的政策才在短期有效。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">"<b>预料到的政策只改价格，不改产出；只有意外的政策才短期有效</b>"（新古典宏观的政策无效性命题）</span>
+      <span class="mnc">三人对比：<b>凯恩斯</b>（短期有效、工资粘性）→ <b>弗里德曼</b>（适应性预期、短期有效长期无效）→ <b>卢卡斯</b>（理性预期、连短期也基本无效）</span>
+    </div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">13-10</span><span class="nm">降低通胀的代价：牺牲率</span><span class="lv">★★</span><span class="kwd">名词解释 / 计算</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>通胀有惯性，要把它压下来，必须经历一段<b>产出低于潜在水平、失业高于自然率</b>的痛苦时期。<b>牺牲率</b> = 通胀率每下降 1 个百分点，要损失多少个百分点的 GDP。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct"><span class="mnc">"<b>治通胀要付学费，学费就是产出损失</b>"；典型数值：牺牲率约 <b>5</b>（通胀降 1%，GDP 损失约 5%）</span></div></div>
+    <div class="row"><span class="lb lb-cal">公式</span><div class="ct"><span class="f">牺牲率 = GDP 的累计损失百分比 ÷ 通货膨胀率的下降幅度</span></div></div>
+    <div class="row"><span class="lb lb-trap">易错</span><div class="ct"><p>若公众<b>信任</b>政府的反通胀承诺（可信性），预期会迅速下调，<b>牺牲率会小很多</b>（无痛反通胀）——这是"预期管理"的理论依据，答论述题非常好用。</p></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">13-11</span><span class="nm">通货紧缩与滞胀</span><span class="lv">★★★</span><span class="kwd">简答</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p><b>通货紧缩</b>：物价持续普遍下跌。听起来是好事，实际很糟——大家捂着钱等更便宜（推迟消费）、债务实际负担变重（欠的钱更"值钱"）、实际利率上升，形成"越等越跌"的恶性循环。<br><b>滞胀</b>：高通胀 + 高失业并存，源于<b>不利供给冲击</b>。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">通缩三害：<b>推迟消费、债务变重、实际利率上升</b>　→　"<b>不买、还不起、借不到</b>"</span>
+      <span class="mnc">滞胀判别：<b>价涨 + 量减 + 失业升 = AS 左移</b></span>
+    </div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">13-12</span><span class="nm">经济周期：定义、阶段与类型</span><span class="lv">★★★</span><span class="kwd">简答 / 选择</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>经济周期 = 总体经济活动的<b>扩张与收缩交替</b>。四阶段：<b>繁荣 → 衰退 → 萧条 → 复苏</b>，两个转折点是<b>顶峰</b>和<b>谷底</b>。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">四类周期按长度（由短到长）：<b>基钦（存货，3—5 年）、朱格拉（设备投资，8—10 年）、库兹涅茨（建筑，15—25 年）、康德拉季耶夫（技术革命，50—60 年）</b></span>
+      <span class="mnc">口诀："<b>基（存货）朱（设备）库（建筑）康（技术）</b>"　→　联想"<b>记住库房</b>"：记(基)住(朱)库(库)房→康</span>
+    </div></div>
+    <div class="row"><span class="lb lb-trap">易错</span><div class="ct"><p>经济周期<b>不是</b>固定长度的机械循环，而是"扩张与收缩交替、持续时间不等"的波动；现代宏观不再追求"精准预测周期"，而是研究<b>冲击 + 传导机制</b>。</p></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">13-13</span><span class="nm">经济周期理论：从外生到现代</span><span class="lv">★★</span><span class="kwd">简答</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>早期理论喜欢找"<b>外部原因</b>"（太阳黑子、心理、货币、创新）；现代理论把周期看成"<b>冲击 + 传导</b>"：<br>· <b>实际经济周期（RBC）</b>：技术冲击是主因，市场能自我调节，周期是"最优反应"；<br>· <b>货币主义</b>：货币供给的不当变动是主因；<br>· <b>新凯恩斯主义</b>：名义粘性（价格、工资调不动）使需求冲击被放大成产出波动，所以<b>需要</b>政策干预。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct"><span class="mnc">一图记三派：<b>RBC＝技术冲击＋不用管；货币主义＝货币乱＋按规则办；新凯恩斯＝粘性＋该出手就出手</b></span></div></div>
+    <div class="row"><span class="lb lb-trap">易错</span><div class="ct"><p>教材"本章评析"强调：西方周期理论<b>回避了资本主义基本矛盾</b>，对危机的根源解释有局限；分析中国经济要立足<b>社会主义初级阶段的基本国情</b>与结构性因素。这类"评析"题按教材口吻作答即可。</p></div></div>
+  </div>
+</div>
+
+<div class="sec-h"><span class="bar"></span><h3>第十三章 例题</h3><span class="cnt">6 道</span></div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 1</span><span class="ty">计算</span><span class="ti">奥肯定律</span></div>
+  <div class="eb">
+    <p class="q">某国自然失业率为 5%，当前实际失业率为 7%，潜在 GDP 为 10000 亿元。按奥肯定律（α = 2）计算：（1）产出缺口率；（2）实际 GDP；（3）产出损失；（4）若该国希望把失业率降到 6%，实际 GDP 应为多少？</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">（1）u − u* = 7% − 5% = 2 个百分点 → 产出缺口率 = −2 × 2% = <b>−4%</b></p>
+      <p class="st">（2）实际 GDP = 10000 × (1 − 4%) = <b>9600 亿元</b></p>
+      <p class="st">（3）产出损失 = 10000 − 9600 = <b>400 亿元</b></p>
+      <p class="st">（4）u = 6% → 缺口率 = −2 × 1% = −2% → 实际 GDP = 10000 × 98% = <b>9800 亿元</b>（比现在多 200 亿元）</p>
+      <div class="ans"><b>答案：（1）−4%；（2）9600 亿元；（3）400 亿元；（4）9800 亿元。</b></div>
+      <div class="tip"><b>技巧：</b>奥肯定律就是一道"<b>乘 2 换号</b>"的题：失业率超几个点 → 产出缺口就是负的几乘 2 个点。写答案时一定带上<b>负号</b>（产出低于潜在）。</div>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 2</span><span class="ty">计算</span><span class="ti">菲利普斯曲线与通胀加速</span></div>
+  <div class="eb">
+    <p class="q">设短期菲利普斯曲线为 π = π<sup>e</sup> − 0.5（u − u*），自然失业率 u* = 5%，初始时经济处于长期均衡、通胀率为 2%。（1）第 1 年政府把失业率压到 4%，通胀率是多少？（2）若人们按"上一期通胀"形成预期（极端适应性预期），政府第 2、3 年继续把失业率维持在 4%，通胀率分别是多少？（3）长期结果如何？</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">（1）第 1 年：π<sup>e</sup> = 2% → π = 2% − 0.5×(4% − 5%) = 2% + 0.5% = <b>2.5%</b></p>
+      <p class="st">（2）第 2 年 π<sup>e</sup> = π<sub>−1</sub> = 2.5% → π = 2.5% + 0.5% = <b>3.0%</b>；第 3 年 π<sup>e</sup> = 3.0% → π = <b>3.5%</b></p>
+      <p class="st">（3）长期：预期不断上移，短期 PC 逐年向上平移，失业率最终仍回到 <b>u* = 5%</b>，而通胀率却停留在更高水平（若继续强压就需<b>年年加速</b>）</p>
+      <div class="ans"><b>答案：（1）2.5%；（2）3.0%、3.5%；（3）长期失业回到 5%，只留下更高的通胀——长期菲利普斯曲线垂直。</b></div>
+      <div class="tip"><b>技巧：</b>这类题是"递推"：每一期的 π 自动成为下一期的 π<sup>e</sup>，只要 u &lt; u* 就每期加 ε×(u*−u)。看到"维持失业率低于自然率"就写"<b>通胀加速</b>"，看到"长期"就写"<b>回到自然率</b>"。</div>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 3</span><span class="ty">计算</span><span class="ti">实际利率、通胀与再分配</span></div>
+  <div class="eb">
+    <p class="q">某储户年初存入 10000 元，名义年利率 5%，当年 CPI 上涨 3%。（1）按费雪方程估算实际利率；（2）一年后本息共多少？按年初物价折算的实际购买力是多少？（3）说明通胀对债权人、债务人、固定收入者的影响。</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">（1）实际利率 ≈ 名义利率 − 通胀率 = 5% − 3% = <b>2%</b>（精确式：(1.05/1.03) − 1 ≈ 1.94%）</p>
+      <p class="st">（2）名义本息 = 10000 × 1.05 = <b>10500 元</b>；按年初物价折算 = 10500 ÷ 1.03 ≈ <b>10194 元</b>（实际只多买了 194 元的东西）</p>
+      <p class="st">（3）通胀使<b>债权人（储户）受损、债务人受益</b>（还的钱不值钱）；拿<b>固定名义工资/养老金</b>的人实际收入下降；而能随通胀调整价格的企业与利润收入者相对受益。</p>
+      <div class="ans"><b>答案：（1）约 2%；（2）名义 10500 元，实际购买力约 10194 元；（3）财富从债权人向债务人、从固定收入者向灵活定价者转移。</b></div>
+      <div class="tip"><b>技巧：</b>费雪方程<b>近似式 r ≈ i − π</b> 一定要会（精确式 (1+i)/(1+π) − 1）。判断"谁吃亏"的万能句：<b>凡是名义金额固定的（债权、固定工资），通胀一来就吃亏</b>。</div>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 4</span><span class="ty">选择 / 简答</span><span class="ti">三种通胀成因的判别</span></div>
+  <div class="eb">
+    <p class="q">判断下列情形属于哪种通货膨胀，并说明在 AD—AS 图形上如何表现：（1）政府大规模减税、央行降准降息，消费投资两旺，物价上涨；（2）OPEC 再次把油价提高一倍；（3）新兴产业工资大涨，传统产业工人以"攀比"为由要求同等涨幅，全社会工资成本上升。</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">（1）<b>需求拉动型</b>：政策扩张 → AD 右移 → 价格上升、产出增加（短期）。</p>
+      <p class="st">（2）<b>成本推动型</b>：原材料涨价 → 短期 AS 左移 → 价格上升、产出下降（滞胀倾向）。</p>
+      <p class="st">（3）<b>结构性通货膨胀</b>：部门间生产率与工资攀比 → 成本普遍抬升，本质也是供给侧的 AS 左移。</p>
+      <div class="ans"><b>答案：（1）需求拉动（AD 右移）；（2）成本推动（AS 左移）；（3）结构性（成本推动的一种，AS 左移）。</b></div>
+      <div class="tip"><b>秒杀技巧：</b>题干里出现"<b>货币、信贷、减税、消费投资两旺</b>"→ 需求拉动；出现"<b>工资、石油、原材料、汇率导致进口成本</b>"→ 成本推动；出现"<b>部门差异、攀比</b>"→ 结构性。</div>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 5</span><span class="ty">论述</span><span class="ti">短期与长期菲利普斯曲线</span></div>
+  <div class="eb">
+    <p class="q">试述菲利普斯曲线的演变：从原始菲利普斯曲线到附加预期的菲利普斯曲线，再到长期垂直的菲利普斯曲线，并说明其政策含义。</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">① 原始 PC（菲利普斯）：失业率与<b>货币工资增长率</b>负相关 → 后来改写成失业率与<b>通货膨胀率</b>负相关，提供"通胀换就业"的政策菜单。</p>
+      <p class="st">② 附加预期的 PC（弗里德曼、费尔普斯）：π = π<sup>e</sup> − ε(u − u*) + v。决定通胀的不是失业率本身，而是<b>失业率相对自然失业率的偏离</b>；预期通胀上升会使整条短期 PC 上移。</p>
+      <p class="st">③ 长期 PC：预期可充分调整（π = π<sup>e</sup>）→ 必有 u = u*，长期 PC 是<b>过自然失业率的垂线</b>，通胀与失业无替代关系。</p>
+      <div class="ans"><b>答案要点：</b>政策含义有三层——<b>短期</b>存在替代，需求管理可以调节失业；<b>长期</b>不存在替代，扩张只会留下通胀；因此<b>不能靠通胀买就业</b>，降低失业的根本办法是改善劳动市场运行（培训、就业服务、消除工资刚性），把自然失业率本身降下来。</div>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 6</span><span class="ty">简答</span><span class="ti">经济周期的阶段与类型</span></div>
+  <div class="eb">
+    <p class="q">什么是经济周期？它分为哪几个阶段？按长度可分为哪几种类型？各由什么因素主导？</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">定义：总体经济活动的扩张与收缩交替出现的现象（通常以实际 GDP 的波动来衡量）。</p>
+      <p class="st">四阶段：<b>繁荣（顶峰）→ 衰退 → 萧条（谷底）→ 复苏</b>；两个转折点：峰与谷。</p>
+      <p class="st">四类型：<b>基钦周期</b>（3—5 年，存货投资）、<b>朱格拉周期</b>（8—10 年，设备投资）、<b>库兹涅茨周期</b>（15—25 年，建筑业）、<b>康德拉季耶夫周期</b>（50—60 年，技术革命）。</p>
+      <div class="ans"><b>答案要点。</b>补充得分点：① 现代观点把周期看作"<b>冲击 + 传导机制</b>"的结果；② 需求冲击（货币、财政、信心）与供给冲击（技术、能源）都能引发波动；③ 由于价格粘性，需求冲击在短期会造成产出与就业的真实波动，这是新凯恩斯主义主张适度干预的依据。</div>
+      <div class="tip"><b>记忆：</b>"<b>基朱库康</b>"对应"<b>存货—设备—建筑—技术</b>"，长度从短到长，选择题常直接考对应关系。</div>
+    </div></details>
+  </div>
+</div>
+</section>
+
+<!-- ======================= 第十四章 ======================= -->
+<section class="chapter" id="ch14">
+<div class="ch-head">
+  <h2><em>第十四章</em>开放条件下的宏观经济</h2>
+  <p class="oneline">最后一章把<b>国门打开</b>：先学会看<b>国际收支平衡表</b>和<b>汇率</b>，再用<b>蒙代尔—弗莱明模型</b>分析"汇率制度不同，财政/货币政策效果完全不同"。<b>全章最高频：蒙代尔—弗莱明四格结论、三元悖论、实际汇率</b>。</p>
+  <div class="map">
+    <span>国际收支平衡表</span><span>经常/资本与金融账户</span><span>顺差逆差</span><span>名义汇率与标价法</span>
+    <span>实际汇率</span><span>汇率制度</span><span>J 曲线效应</span><span>净出口函数</span>
+    <span>资本净流出</span><span>BP 曲线</span><span>蒙代尔—弗莱明</span><span>固定/浮动汇率政策效果</span>
+    <span>三元悖论</span>
+  </div>
+</div>
+
+<div class="sec-h"><span class="bar"></span><h3>考点精讲</h3><span class="cnt">12 个考点</span></div>
+
+<div class="kp">
+  <div class="kh"><span class="no">14-1</span><span class="nm">国际收支与国际收支平衡表</span><span class="lv">★★★</span><span class="kwd">选择 / 简答</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>国际收支平衡表就是一国对外经济往来的"<b>记账本</b>"，记两件大事：<b>买卖东西和服务</b>（经常账户）和<b>买卖资产、借钱</b>（资本和金融账户），外加官方储备变动和"记不平的差额"（净误差与遗漏）。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">经常账户四件套：<b>货物（商品）、服务、收益（工资与投资收益）、经常转移（侨汇、援助）</b>　→　"<b>货服收转</b>"</span>
+      <span class="mnc">金融账户：直接投资、证券投资、其他投资、<b>储备资产</b>；储备资产是央行的"外汇家底"，是<b>平衡项</b></span>
+      <span class="mnc">记账口诀（最容易忘）：<b>出口（卖东西给外国人）、收到外国人的钱 → 记贷方（+）；进口、钱流向国外 → 记借方（−）</b></span>
+    </div></div>
+    <div class="row"><span class="lb lb-cal">公式</span><div class="ct">
+      <span class="f">经常账户差额 + 资本和金融账户差额（不含储备） + 储备资产变动 + 净误差与遗漏 = 0</span>
+      <p class="small">推论：经常账户顺差（净出口为正）时，必然对应<b>资本净流出</b>或<b>储备增加</b>——"赚了外国人的钱，要么去买外国资产，要么变成外汇储备"。</p>
+    </div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">14-2</span><span class="nm">汇率、标价法与汇率制度</span><span class="lv">★★★</span><span class="kwd">名词解释 / 计算</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p><b>名义汇率</b>：两种货币的兑换比价。<b>实际汇率</b>：扣掉两国物价后，<b>本国货相对外国货到底贵不贵</b>——它才真正决定净出口。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">标价法判别（超重要）：<b>直接标价法</b>（1 单位外币 = ? 本币，中国常用，如 1 美元 = 7 元）→ <b>数字上升 = 本币贬值</b>；<b>间接标价法</b>（1 单位本币 = ? 外币）→ <b>数字上升 = 本币升值</b></span>
+      <span class="mnc">"<b>本币贬值 → 国货变便宜 → 净出口增加</b>"；"<b>本币升值 → 国货变贵 → 净出口减少</b>"（先把这句话记死，公式就不会搞反）</span>
+    </div></div>
+    <div class="row"><span class="lb lb-cal">公式</span><div class="ct">
+      <span class="f">实际汇率（本币用间接标价 e 时）：ε = e × P / P<sub>f</sub>
+　　ε 上升 = 本国货相对更贵 = 净出口 NX 减少
+净出口函数：NX = NX（ε），是实际汇率的<b>减函数</b></span>
+      <p class="small">汇率制度三分：<b>固定汇率制</b>（央行有义务干预维持）、<b>浮动汇率制</b>（自由波动）、<b>管理浮动</b>（有管理的浮动）。</p>
+    </div></div>
+    <div class="row"><span class="lb lb-trap">易错</span><div class="ct"><p>教材（蒙代尔—弗莱明部分）用"<b>e 上升 = 本币升值</b>"的写法（e 为间接标价，汇率在纵轴），与国内新闻常用的"人民币兑美元 7.2"方向相反。<b>答题时先声明标价法</b>，或直接说"升值/贬值"而不用"上升/下降"，最保险。</p></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">14-3</span><span class="nm">净出口函数、资本净流出与国际收支平衡（BP）</span><span class="lv">★★★</span><span class="kwd">简答 / 计算</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p><b>净出口 NX</b>：本国收入越高 → 买外国货越多 → 净出口越少；本币升值 → 净出口越少。<br><b>资本净流出 F</b>：本国利率越高 → 钱更愿意留在本国（还能吸引外资流入）→ 资本净流出越少。<br><b>国际收支平衡</b>：卖东西净赚的外汇（NX）＝流向国外的净资本（F）。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">"<b>NX 怕收入高、怕升值；F 怕利率高</b>"　→　NX = NX(ε, Y) 递减；F = F(r) 递减</span>
+      <span class="mnc">BP 曲线倾斜方向：<b>Y↑ → 进口↑ → NX↓ → 必须靠 r↑（吸钱进来）来补 → BP 向右上方倾斜</b></span>
+    </div></div>
+    <div class="row"><span class="lb lb-cal">公式</span><div class="ct">
+      <span class="f">国际收支平衡：NX = F　　即　NX（Y, ε）= F（r）
+BP 曲线上方（利率偏高）→ F 偏小 → NX &gt; F → <b>国际收支顺差</b>
+BP 曲线下方（利率偏低）→ F 偏大 → NX &lt; F → <b>国际收支逆差</b></span>
+    </div></div>
+    <div class="row"><span class="lb lb-trap">易错</span><div class="ct"><p>资本<b>完全流动</b>时，BP 是一条<b>水平线</b>（本国利率必须等于世界利率 r<sub>w</sub>，稍高就有无限资本流入）；资本<b>完全不流动</b>时，BP <b>垂直</b>。这是分析蒙代尔—弗莱明的前提。</p></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">14-4</span><span class="nm">蒙代尔—弗莱明模型的基本框架</span><span class="lv">★★★</span><span class="kwd">简答</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>研究一个"小国"（不能影响世界利率）在<b>资本完全自由流动</b>下的宏观政策：本国利率被世界利率 r<sub>w</sub> 钉住，剩下的变量是收入 Y 和汇率 e。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">两条曲线：<b>IS*</b>（产品市场：Y = C + I(r<sub>w</sub>) + G + NX(e)），<b>LM*</b>（货币市场：M/P = L(r<sub>w</sub>, Y)）</span>
+      <span class="mnc">关键：<b>LM* 与汇率无关</b>，所以 LM* 是<b>垂直线</b>，它单独决定 Y；IS* 决定汇率 e</span>
+    </div></div>
+    <div class="row"><span class="lb lb-cal">公式</span><div class="ct">
+      <span class="f">IS*：Y = C（Y − T） + I（r<sub>w</sub>） + G + NX（e）
+LM*：M / P = L（r<sub>w</sub>, Y）　→　给定 M、P 就直接决定 Y</span>
+    </div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">14-5</span><span class="nm">浮动汇率制下的财政政策（无效）</span><span class="lv">★★★</span><span class="kwd">论述</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>政府多花钱 → 收入想上升 → 利率想上升 → 外国人闻着高利率把钱涌进来 → <b>抢着买本币 → 本币升值 → 本国货变贵 → 出口锐减、进口大增</b> → 净出口的减少<b>刚好抵消</b>了政府支出的增加 → 收入一点没变。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">链条：<b>G↑ → IS*右移 → e↑（升值）→ NX↓ → Y 不变</b></span>
+      <span class="mnc">"<b>挤出的不是投资，而是净出口</b>"——这是蒙代尔—弗莱明里最独特的一句话，论述题写出来很加分</span>
+    </div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">14-6</span><span class="nm">浮动汇率制下的货币政策（有效）</span><span class="lv">★★★</span><span class="kwd">论述</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>央行印钱 → 利率想下降 → 资本外流 → <b>本币贬值 → 本国货变便宜 → 出口大增、进口减少</b> → 净出口增加 → 收入上升。汇率这个"额外通道"让货币政策威力大增。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">链条：<b>M↑ → LM*右移 → e↓（贬值）→ NX↑ → Y↑</b></span>
+      <span class="mnc">"<b>浮动汇率下，货币政策多了一条'汇率'腿，所以特别灵</b>"</span>
+    </div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">14-7</span><span class="nm">固定汇率制下的财政政策（有效）</span><span class="lv">★★★</span><span class="kwd">论述</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>政府多花钱 → 利率想上升 → 外资涌入、本币有<b>升值</b>压力 → 央行为守住汇率，<b>必须买外汇、投放本币</b> → 货币供给被动增加 → LM* 右移 → 收入<b>大幅增加</b>。央行等于"被迫配合"了财政扩张。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">链条：<b>G↑ → IS*右移 → 升值压力 → 央行买入外汇、投放本币 → M↑ → LM*右移 → Y↑↑</b></span>
+      <span class="mnc">"<b>固定汇率下，央行被汇率绑住，货币政策只能'配合'财政</b>"</span>
+    </div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">14-8</span><span class="nm">固定汇率制下的货币政策（无效）</span><span class="lv">★★★</span><span class="kwd">论述</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>央行想多印钱 → 利率下降 → 资本外流、本币有<b>贬值</b>压力 → 央行为守住汇率必须<b>抛外汇、收回本币</b> → 刚放出去的钱又被收回来 → 货币供给回到原样 → 收入不变。<b>货币政策在固定汇率下"自废武功"</b>。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">链条：<b>M↑ → LM*右移 → 贬值压力 → 央行抛外汇、收回本币 → M 回落 → 无效</b></span>
+      <span class="mnc">"<b>固定汇率 + 资本自由流动 = 货币当局丧失货币主权</b>"</span>
+    </div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">14-9</span><span class="nm">四格总表（本章最核心的结论）</span><span class="lv">★★★</span><span class="kwd">必背</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>把上面的四条结论压成一张表，考前背这一张就够。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <table class="tbl">
+        <tr><th>资本完全流动的小型开放经济</th><th>财政政策</th><th>货币政策</th><th>贸易政策（关税/配额）</th></tr>
+        <tr><td class="k">浮动汇率制</td><td><b>无效</b>（汇率升值挤出净出口）</td><td><b>有效</b>（贬值刺激净出口）</td><td>无效，贸易量减少</td></tr>
+        <tr><td class="k">固定汇率制</td><td><b>有效</b>（央行被动扩表配合）</td><td><b>无效</b>（货币供给被外汇干预抵消）</td><td>有效（收入增加）</td></tr>
+      </table>
+      <span class="mnc">口诀（务必背熟）：<b>"固定汇率——财政灵、货币废；浮动汇率——货币灵、财政废"</b>　→　缩记为 <b>"固财浮货"</b></span>
+      <p class="small">为什么固定汇率下财政灵？因为央行为了守汇率<b>被迫放水</b>，等于财政、货币一起发力。为什么浮动汇率下货币灵？因为<b>汇率贬值</b>给了货币政策一条额外的传导渠道。</p>
+    </div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">14-10</span><span class="nm">贸易政策的效果</span><span class="lv">★★</span><span class="kwd">简答</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p><b>浮动汇率下加关税</b>：进口被限制 → 净出口想增加 → 本币升值 → 出口被升值打回去 → <b>净出口回到原点、收入不变</b>，只是贸易量变小了（白白损失效率）。<br><b>固定汇率下加关税</b>：汇率不动 → 净出口真的增加 → 收入上升。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct"><span class="mnc">"<b>浮动汇率会'自动抵消'贸易保护，固定汇率不会</b>"；结论：以贸易保护来增加就业，在浮动汇率下<b>无效</b></span></div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">14-11</span><span class="nm">三元悖论（不可能的三位一体）</span><span class="lv">★★★</span><span class="kwd">论述 / 简答</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p>三样好东西：<b>① 资本自由流动、② 汇率固定、③ 货币政策独立</b>——<b>最多只能同时拥有两个</b>，第三个必须放弃。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct">
+      <span class="mnc">"<b>自由的钱、钉住的汇率、自己的利率——三选二</b>"</span>
+      <p class="small">典型组合：<br>· 美国：资本自由流动 + 浮动汇率 + 货币政策独立（放弃固定汇率）<br>· 中国香港：资本自由流动 + 固定汇率（联系汇率） + <b>放弃</b>货币政策独立<br>· 中国内地：汇率有管理 + 货币政策保持独立 + 资本账户<b>部分</b>管理</p>
+    </div></div>
+  </div>
+</div>
+
+<div class="kp">
+  <div class="kh"><span class="no">14-12</span><span class="nm">价格变动的蒙代尔—弗莱明与 J 曲线效应</span><span class="lv">★★</span><span class="kwd">简答</span></div>
+  <div class="kb">
+    <div class="row"><span class="lb lb-plain">大白话</span><div class="ct"><p><b>价格可变时</b>：短期价格粘性，政策能影响产出；长期价格调整后，产出回到自然率水平，只留下价格与汇率的变化（开放经济版的"长期中性"）。<br><b>J 曲线效应</b>：本币贬值后，贸易收支会<b>先恶化、后改善</b>，形状像字母 J（因为合同已签、数量调整需要时间）。</p></div></div>
+    <div class="row"><span class="lb lb-mem">记忆法</span><div class="ct"><span class="mnc">J 曲线三阶段：<b>货币合同阶段（价格数量都不变）→ 传导阶段（价格变、数量没变，继续恶化）→ 数量调整阶段（数量大变，转为改善）</b></span></div></div>
+  </div>
+</div>
+
+<div class="sec-h"><span class="bar"></span><h3>第十四章 例题</h3><span class="cnt">5 道</span></div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 1</span><span class="ty">计算</span><span class="ti">国际收支平衡表记账</span></div>
+  <div class="eb">
+    <p class="q">某国一年内发生如下对外交易（单位：亿美元）：① 出口服装 100；② 进口设备 80；③ 外商来华直接投资 50；④ 本国企业购买外国债券 30；⑤ 收到海外侨汇 10。请说明每笔交易记入哪个账户的借方还是贷方，计算经常账户差额、资本和金融账户（不含储备）差额，以及储备资产变动。</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">① 出口服装 100 → <b>经常账户（货物）贷方 +100</b>；② 进口设备 80 → <b>经常账户（货物）借方 −80</b></p>
+      <p class="st">③ 外商直接投资 50 → <b>金融账户贷方 +50</b>（外资流入＝本国资产被买走，记贷方）；④ 购买外国债券 30 → <b>金融账户借方 −30</b>（资本流出）</p>
+      <p class="st">⑤ 侨汇 10 → <b>经常账户（经常转移）贷方 +10</b></p>
+      <p class="st">经常账户差额 = 100 − 80 + 10 = <b>+30（顺差）</b>；金融账户（不含储备）= 50 − 30 = <b>+20</b></p>
+      <p class="st">由恒等式：30 + 20 + 储备变动 = 0 → 储备资产变动 = <b>−50</b>（即储备<b>增加</b> 50 亿美元）</p>
+      <div class="ans"><b>答案：经常账户顺差 30 亿；金融账户（不含储备）净流入 20 亿；储备资产增加 50 亿。</b></div>
+      <div class="tip"><b>技巧：</b>记账只需判断"<b>钱进来了还是出去了</b>"：钱进来记<b>贷方（+）</b>，钱出去记<b>借方（−）</b>。储备资产是<b>平衡项</b>，用恒等式倒推即可。</div>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 2</span><span class="ty">计算</span><span class="ti">名义汇率与实际汇率</span></div>
+  <div class="eb">
+    <p class="q">采用间接标价法（1 单位本币折合外币），初始汇率 e = 0.14（美元/本币），本国价格水平 P = 100，外国价格水平 P<sub>f</sub> = 20（美元）。（1）求初始实际汇率；（2）若本币升值至 e = 0.16，实际汇率变为多少？对净出口有何影响？（3）若本国发生通胀使 P 上升到 110（汇率不变），实际汇率与净出口如何变化？</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">（1）ε = e × P / P<sub>f</sub> = 0.14 × 100 / 20 = <b>0.70</b></p>
+      <p class="st">（2）e = 0.16 → ε = 0.16 × 100 / 20 = <b>0.80</b> → 本国货相对外国货<b>变贵</b> → <b>净出口减少</b></p>
+      <p class="st">（3）P = 110 → ε = 0.14 × 110 / 20 = <b>0.77</b> → 同样变贵 → <b>净出口减少</b></p>
+      <div class="ans"><b>答案：（1）0.70；（2）0.80，净出口减少；（3）0.77，净出口减少。</b></div>
+      <div class="tip"><b>技巧：</b>实际汇率只要记住一句话——<b>"ε 越大，本国货越贵，越卖不出去（NX 越小）"</b>。本币升值、本国通胀，都会让 ε 变大。答题时如果怕标价法搞混，就只说"升值/贬值"并给出结论，老师一般不会扣你方向分。</div>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 3</span><span class="ty">计算 + 判断</span><span class="ti">BP 曲线与顺逆差</span></div>
+  <div class="eb">
+    <p class="q">某国净出口 NX = 400 − 0.1Y，资本净流出 F = 500 − 25r（Y 为收入，r 为利率，% ）。（1）求国际收支平衡（BP）曲线方程；（2）当 Y = 1000、r = 5 时，该国国际收支是顺差还是逆差？（3）当 Y = 1000、r = 10 时又如何？</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">（1）BP：NX = F → 400 − 0.1Y = 500 − 25r → 0.1Y = 25r − 100 → <b>Y = 250r − 1000</b>（向右上方倾斜）</p>
+      <p class="st">（2）Y = 1000、r = 5：NX = 400 − 100 = 300；F = 500 − 125 = 375 → NX &lt; F → <b>逆差</b>（资本流出大于贸易顺差，外汇供不应求）</p>
+      <p class="st">（3）Y = 1000、r = 10：NX = 300；F = 500 − 250 = 250 → NX &gt; F → <b>顺差</b></p>
+      <div class="ans"><b>答案：（1）Y = 250r − 1000；（2）逆差；（3）顺差。</b></div>
+      <div class="tip"><b>技巧：</b>不用公式也能秒判——<b>BP 曲线"上方"（利率偏高）＝顺差，"下方"（利率偏低）＝逆差</b>。原因：利率高 → 钱愿意留下来（资本净流出少）→ 外汇来源够覆盖贸易缺口。</div>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 4</span><span class="ty">论述（必考）</span><span class="ti">蒙代尔—弗莱明模型下的政策效果</span></div>
+  <div class="eb">
+    <p class="q">在资本完全流动的小型开放经济中，比较固定汇率制与浮动汇率制下财政政策和货币政策的效果，并说明原因。</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">前提：本国利率被世界利率 r<sub>w</sub> 钉住，IS* 决定汇率、LM* 决定收入。</p>
+      <p class="st"><b>浮动 + 财政（无效）</b>：G↑ → IS* 右移 → 利率有上升压力 → 资本流入 → 本币升值 → NX 减少，恰好抵消政府支出增加 → Y 不变。</p>
+      <p class="st"><b>浮动 + 货币（有效）</b>：M↑ → LM* 右移 → 利率有下降压力 → 资本外流 → 本币贬值 → NX 增加 → Y 上升。</p>
+      <p class="st"><b>固定 + 财政（有效）</b>：G↑ → IS* 右移 → 本币有升值压力 → 央行买入外汇、投放本币 → M↑ → LM* 右移 → Y 上升。</p>
+      <p class="st"><b>固定 + 货币（无效）</b>：M↑ → LM* 右移 → 本币有贬值压力 → 央行抛售外汇、收回本币 → M 回到原水平 → Y 不变。</p>
+      <div class="ans"><b>答案核心（一句话）：固定汇率制下财政政策有效、货币政策无效；浮动汇率制下货币政策有效、财政政策无效（"固财浮货"）。</b>根本原因在于：<b>固定汇率制下央行必须动用货币供给来维持汇率，因而丧失了货币政策的独立性</b>；而浮动汇率制下汇率成为吸收外部冲击、放大货币政策效果的渠道，同时也会"挤出"财政政策的净出口。</div>
+      <div class="tip"><b>答题模板：</b>① 先写前提（小型开放经济 + 资本完全流动 + r = r<sub>w</sub>）；② 四条结论各写一条传导链（一定要出现"升值/贬值"和"净出口"）；③ 最后用"固财浮货"收尾并点出央行干预机制。</div>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="eh"><span class="no">例 5</span><span class="ty">简答</span><span class="ti">三元悖论的应用</span></div>
+  <div class="eb">
+    <p class="q">什么是"不可能的三位一体（三元悖论）"？结合现实举例说明三个目标为何不能同时实现。</p>
+    <details><summary>展开答案与解析</summary><div class="sol">
+      <p class="st">含义：一国无法同时实现<b>资本自由流动、汇率稳定（固定汇率）、货币政策独立性</b>三个目标，最多只能取其二。</p>
+      <p class="st">逻辑：资本自由流动时，本国利率偏离世界利率就会引发无限规模的资本流动；若又要固定汇率，央行就必须被动买卖外汇、吞吐本币，货币供给被"外部绑架"，货币政策独立性随之丧失。</p>
+      <div class="ans"><b>答案要点＋例子：</b>① 实行<b>资本管制</b>的国家，可以同时拥有固定汇率与独立的货币政策；② <b>中国香港</b>的货币局制度：资本自由流动 + 联系汇率，利率只能跟随美元，<b>放弃</b>货币政策独立；③ 大型经济体（如美国）选择浮动汇率，保住了货币政策独立性；④ 现实中更多是"中间解"：有管理的浮动 + 部分资本账户管理 + 一定程度的政策自主，需要在三者之间动态权衡。</div>
+    </div></details>
+  </div>
+</div>
+</section>
+
+<!-- ======================= 附录 ======================= -->
+<section class="chapter" id="fx">
+<div class="ch-head" style="border-left-color:var(--cyan)">
+  <h2><em>附录一</em>全书公式速查表（考前 10 分钟扫一遍）</h2>
+  <p class="oneline">按章排列，左边公式、右边一句话用途。<b>建议打印出来贴在桌上</b>。</p>
+</div>
+
+<div class="sec-h"><span class="bar"></span><h3>第九章 基本指标</h3></div>
+<table class="tbl">
+  <tr><th>公式</th><th>用途 / 记忆</th></tr>
+  <tr><td class="k">GDP = C + I + G + NX</td><td>支出法（四家买主：居民、企业、政府、外国人）</td></tr>
+  <tr><td class="k">GDP = 工资+利息+租金+利润+折旧+间接税−补助金</td><td>收入法（看谁赚了钱）</td></tr>
+  <tr><td class="k">GDP = Σ（总产出 − 中间投入）</td><td>生产法/增值法</td></tr>
+  <tr><td class="k">实际 GDP = Σ（基年价格 × 当年产量）</td><td>"冻住价格只看量"</td></tr>
+  <tr><td class="k">平减指数 = 名义GDP ÷ 实际GDP × 100</td><td>篮子随产量变（帕氏）</td></tr>
+  <tr><td class="k">CPI = 当期篮子费用 ÷ 基期篮子费用 × 100</td><td>篮子固定（拉氏）</td></tr>
+  <tr><td class="k">π = （CPI<sub>t</sub> − CPI<sub>t−1</sub>）÷ CPI<sub>t−1</sub> × 100%</td><td>通货膨胀率</td></tr>
+  <tr><td class="k">失业率 = 失业人数 ÷ 劳动力人数；劳动力 = 就业 + 失业</td><td>失业率 + 就业率 = 1</td></tr>
+  <tr><td class="k">实际失业率 = 自然失业率 + 周期性失业率</td><td>充分就业 ⇔ 周期性失业 = 0</td></tr>
+</table>
+
+<div class="sec-h"><span class="bar"></span><h3>第十章 收入—支出模型</h3></div>
+<table class="tbl">
+  <tr><th>公式</th><th>用途 / 记忆</th></tr>
+  <tr><td class="k">均衡条件：Y = AE（= C + I + G + NX）</td><td>非计划存货投资 = 0</td></tr>
+  <tr><td class="k">C = α + βY；S = −α + (1−β)Y</td><td>α 保底消费，β = MPC</td></tr>
+  <tr><td class="k">MPC + MPS = 1；APC + APS = 1</td><td>两个"1"</td></tr>
+  <tr><td class="k">两部门：Y = (α + I)/(1 − β)</td><td>分母 1−β</td></tr>
+  <tr><td class="k">三部门：Y = (α + I + G + βTR − βT)/(1 − β)</td><td>要经居民手的都乘 β</td></tr>
+  <tr><td class="k">比例税：Y = (α + I + G + βTR)/[1 − β(1 − t)]</td><td>把 β 换成 β(1−t)</td></tr>
+  <tr><td class="k">四部门：Y = (α + I + G − βT + βTR + X − M<sub>0</sub>)/(1 − β + γ)</td><td>分母多加 γ</td></tr>
+  <tr><td class="k">k<sub>i</sub> = k<sub>g</sub> = 1/(1−β)；k<sub>tr</sub> = β/(1−β)；k<sub>t</sub> = −β/(1−β)；k<sub>b</sub> = 1</td><td>全套乘数</td></tr>
+  <tr><td class="k">投资函数 i = e − d·r；托宾 q = 市值/重置成本</td><td>利率高 → 投资少</td></tr>
+</table>
+
+<div class="sec-h"><span class="bar"></span><h3>第十一章 IS—LM</h3></div>
+<table class="tbl">
+  <tr><th>公式</th><th>用途 / 记忆</th></tr>
+  <tr><td class="k">IS：Y = (α + e + G − βT + βTR)/(1−β) − [d/(1−β)]r</td><td>产品市场均衡，右下方倾斜</td></tr>
+  <tr><td class="k">LM：M/P = kY − h r　→　r = (k/h)Y − m/h</td><td>货币市场均衡，右上方倾斜</td></tr>
+  <tr><td class="k">联立：r* = (A − B)/(s + f)，再回代求 Y*</td><td>A、B 为两线截距，s、f 为利率项系数</td></tr>
+  <tr><td class="k">IS 移动量 = 乘数 × 自主支出变动；LM 移动量 = ΔM/(kP)</td><td>政策 → 曲线移动</td></tr>
+  <tr><td class="k">挤出效应 = 乘数 × d × Δr</td><td>LM 越陡、d 越大 → 挤出越大</td></tr>
+  <tr><td class="k">ΔY = ΔA × f/(s+f)；ΔY = ΔB × s/(s+f)</td><td>IS、LM 移动后的收入变化</td></tr>
+</table>
+
+<div class="sec-h"><span class="bar"></span><h3>第十二章 AD—AS</h3></div>
+<table class="tbl">
+  <tr><th>公式</th><th>用途 / 记忆</th></tr>
+  <tr><td class="k">推导 AD：由 LM 解出 r = (kY − M/P)/h，代入 IS</td><td>结果形如 Y = 常数 + 常数/P</td></tr>
+  <tr><td class="k">短期 AS：Y = Y* + λ(P − P<sup>E</sup>) + v</td><td>P = P<sup>E</sup> 时 Y = Y*（潜在产出）</td></tr>
+  <tr><td class="k">短期均衡：令 P = P<sub>0</sub>（粘性）代入 AD 求 Y</td><td>短期动产量</td></tr>
+  <tr><td class="k">长期均衡：令 Y = Y* 代入 AD 解 P</td><td>长期动价格</td></tr>
+  <tr><td class="k">判别：需求冲击 = 价量同向；供给冲击 = 价量反向（滞胀）</td><td>秒杀选择题</td></tr>
+</table>
+
+<div class="sec-h"><span class="bar"></span><h3>第十三章 失业、通胀、周期</h3></div>
+<table class="tbl">
+  <tr><th>公式</th><th>用途 / 记忆</th></tr>
+  <tr><td class="k">奥肯定律：(Y − Y*)/Y* = −α(u − u*)，α ≈ 2</td><td>失业超 1 点 → 产出少 2%</td></tr>
+  <tr><td class="k">菲利普斯曲线：π = π<sup>e</sup> − ε(u − u*) + v</td><td>PC = 另一个版本的 AS</td></tr>
+  <tr><td class="k">极端适应性预期：π = π<sub>−1</sub> − ε(u − u*) + v</td><td>维持 u &lt; u* 需通胀逐年加速</td></tr>
+  <tr><td class="k">长期：π = π<sup>e</sup> ⇒ u = u*</td><td>长期 PC 垂直</td></tr>
+  <tr><td class="k">费雪方程：r ≈ i − π</td><td>实际利率 ≈ 名义利率 − 通胀</td></tr>
+  <tr><td class="k">牺牲率 = GDP 累计损失% ÷ 通胀下降幅度</td><td>反通胀的代价</td></tr>
+</table>
+
+<div class="sec-h"><span class="bar"></span><h3>第十四章 开放经济</h3></div>
+<table class="tbl">
+  <tr><th>公式</th><th>用途 / 记忆</th></tr>
+  <tr><td class="k">实际汇率 ε = e × P / P<sub>f</sub>（e 为间接标价）</td><td>ε 越大 → 国货越贵 → NX 越小</td></tr>
+  <tr><td class="k">国际收支平衡：NX(Y, ε) = F(r)</td><td>卖东西净赚 = 资本净流出</td></tr>
+  <tr><td class="k">BP 上方 = 顺差；BP 下方 = 逆差</td><td>利率高 → 钱留下 → 顺差</td></tr>
+  <tr><td class="k">IS*：Y = C + I(r<sub>w</sub>) + G + NX(e)；LM*：M/P = L(r<sub>w</sub>, Y)</td><td>蒙代尔—弗莱明</td></tr>
+  <tr><td class="k">"固财浮货"</td><td>固定汇率：财政灵货币废；浮动汇率：货币灵财政废</td></tr>
+</table>
+</section>
+
+<section class="chapter" id="mix">
+<div class="ch-head" style="border-left-color:var(--purple)">
+  <h2><em>附录二</em>最容易混淆的 12 组概念</h2>
+  <p class="oneline">考试最爱在这几组里出选择题，一张表全看清。</p>
+</div>
+<table class="tbl">
+  <tr><th>#</th><th>A</th><th>B</th><th>一句话区分</th></tr>
+  <tr><td class="k">1</td><td>名义 GDP</td><td>实际 GDP</td><td>名义用<b>当年</b>价，实际用<b>基年</b>价；产量都用当年</td></tr>
+  <tr><td class="k">2</td><td>GDP 平减指数</td><td>CPI</td><td>平减指数篮子<b>随产量变</b>、只含国产；CPI 篮子<b>固定</b>、含进口</td></tr>
+  <tr><td class="k">3</td><td>摩擦性失业</td><td>结构性 / 周期性失业</td><td>摩擦＝在换工作的<b>路上</b>；结构＝技能/工资<b>配不上</b>；周期＝经济冷<b>没岗位</b></td></tr>
+  <tr><td class="k">4</td><td>自然失业率</td><td>周期性失业率</td><td>自然率＝摩擦＋结构（治不好）；周期性才是宏观政策的对象</td></tr>
+  <tr><td class="k">5</td><td>MPC（边际消费倾向）</td><td>APC（平均消费倾向）</td><td>边际看<b>增量</b> ΔC/ΔY；平均看<b>总账</b> C/Y；因 α&gt;0 故 APC &gt; MPC</td></tr>
+  <tr><td class="k">6</td><td>政府购买乘数</td><td>转移支付 / 税收乘数</td><td>政府<b>直接</b>买最猛 1/(1−β)；经居民手要打 β 折；税收还带负号</td></tr>
+  <tr><td class="k">7</td><td>IS 曲线移动</td><td>沿 IS 移动</td><td><b>财政政策</b>让线移动；<b>利率变化</b>只是点动</td></tr>
+  <tr><td class="k">8</td><td>LM 水平（流动性陷阱）</td><td>LM 垂直（古典区域）</td><td>水平：<b>货币废、财政灵</b>；垂直：<b>财政废、货币灵</b></td></tr>
+  <tr><td class="k">9</td><td>需求冲击</td><td>供给冲击</td><td>价量<b>同向</b>＝需求（AD 移）；价量<b>反向</b>＝供给（AS 移，滞胀）</td></tr>
+  <tr><td class="k">10</td><td>短期菲利普斯曲线</td><td>长期菲利普斯曲线</td><td>短期负斜率、可替代；长期垂直在 u*，不可替代。π<sup>e</sup> 上升→短期 PC <b>上移</b></td></tr>
+  <tr><td class="k">11</td><td>适应性预期</td><td>理性预期</td><td>适应性＝看后视镜（用过去通胀）；理性＝用尽信息（含政策），后者推出政策无效性</td></tr>
+  <tr><td class="k">12</td><td>直接标价</td><td>间接标价</td><td>直接（1 外币=?本币，中国常用）<b>数字升＝贬值</b>；间接（1 本币=?外币）<b>数字升＝升值</b></td></tr>
+</table>
+</section>
+
+<section class="chapter" id="skill">
+<div class="ch-head" style="border-left-color:var(--orange)">
+  <h2><em>附录三</em>五大计算题型标准套路</h2>
+  <p class="oneline">看到题目先"对题型"，再按套路走，计算题基本不会丢分。</p>
+</div>
+
+<div class="grid2">
+  <div class="card">
+    <h4>题型一：乘数类（第十章）</h4>
+    <ul class="pts">
+      <li>先找 β（题里给消费函数就直接读；给表格就 ΔC/ΔY）。</li>
+      <li>判断"谁在动"：政府买 → 1/(1−β)；税收 → −β/(1−β)；转移支付 → β/(1−β)；同时动 → 分别算再相加。</li>
+      <li>比例税 → 分母换成 1−β(1−t)；四部门 → 分母 1−β+γ。</li>
+      <li>验算：把结果代回 AE = Y。</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4>题型二：IS—LM 联立（第十一章）</h4>
+    <ul class="pts">
+      <li>① 由 Y = C+I(+G) 令 AE = Y → 得 IS：Y = A − s·r。</li>
+      <li>② 由 M/P = kY − hr → 得 LM：Y = B + f·r。</li>
+      <li>③ r* = (A−B)/(s+f)，回代得 Y*。</li>
+      <li>④ 挤出 = 乘数 × d × Δr；ΔY 也等于 ΔA × f/(s+f)。</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4>题型三：AD—AS（第十二章）</h4>
+    <ul class="pts">
+      <li>推 AD：从 LM 解 r，代入 IS，整理成 Y = 常数 + 常数/P。</li>
+      <li>短期：价格粘性 → 令 P = P<sub>0</sub> 代 AD 求 Y。</li>
+      <li>长期：令 Y = Y*（潜在产出）代 AD 反解 P。</li>
+      <li>冲击判别：AD 移→价量同向；AS 移→价量反向。</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4>题型四：奥肯 + 菲利普斯（第十三章）</h4>
+    <ul class="pts">
+      <li>奥肯：缺口 = (u−u*) × 2，加负号就是产出缺口率。</li>
+      <li>菲利普斯：π = π<sup>e</sup> − ε(u−u*) + v，代入即可；注意 u−u* 为负时通胀上升。</li>
+      <li>多期题：本期 π 自动成为下期 π<sup>e</sup>，逐期递推。</li>
+      <li>实际利率：r ≈ i − π。</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4>题型五：开放经济（第十四章）</h4>
+    <ul class="pts">
+      <li>记账：钱进 → 贷方(+)，钱出 → 借方(−)，储备作平衡项倒推。</li>
+      <li>实际汇率：ε = eP/P<sub>f</sub>，越大越贵、净出口越少。</li>
+      <li>BP：令 NX = F；上方顺差、下方逆差。</li>
+      <li>政策效果：直接套"固财浮货"，并写出含"升值/贬值 → 净出口"的传导链。</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4>名词解释高频 15 词（考前扫一遍）</h4>
+    <ul class="pts small">
+      <li>GDP、实际 GDP、GDP 平减指数、CPI</li>
+      <li>自然失业率、充分就业、潜在 GDP</li>
+      <li>边际消费倾向、乘数、平衡预算乘数、自动稳定器</li>
+      <li>资本边际效率、流动性陷阱、挤出效应</li>
+      <li>菲利普斯曲线、牺牲率、三元悖论、实际汇率</li>
+    </ul>
+  </div>
+</div>
+
+<div class="sec-h"><span class="bar"></span><h3>考前 12 问自测（先自己答，再点开）</h3></div>
+
+<div class="ex">
+  <div class="eh"><span class="no">自测</span><span class="ti">12 道快问快答</span></div>
+  <div class="eb">
+    <ol class="pts">
+      <li>GDP 与 GNP 的区别？按什么原则计算？</li>
+      <li>计不计入 GDP：二手住房交易、股票买卖、保姆工资、政府养老金、存货增加？</li>
+      <li>β = 0.8 时，政府购买乘数、税收乘数、转移支付乘数、平衡预算乘数分别是多少？</li>
+      <li>为什么政府购买乘数大于转移支付乘数？</li>
+      <li>IS 曲线和 LM 曲线各向右下还是右上倾斜？分别由什么决定陡缓？</li>
+      <li>流动性陷阱下货币政策和财政政策各如何？古典区域呢？</li>
+      <li>什么是挤出效应？什么条件下出现完全挤出？</li>
+      <li>由 IS—LM 推导 AD 曲线的关键一步是什么？</li>
+      <li>短期 AS 向右上倾斜的三种解释？长期 AS 为何垂直？</li>
+      <li>油价暴涨在 AD—AS 图上如何表现？叫什么现象？政策为何两难？</li>
+      <li>奥肯定律说什么？长期菲利普斯曲线是什么形状？为什么？</li>
+      <li>固定汇率与浮动汇率下财政、货币政策效果如何？三元悖论是什么？</li>
+    </ol>
+    <details><summary>展开参考答案</summary><div class="sol">
+      <div class="ans">
+      <b>1.</b> GDP 按<b>国土原则</b>（境内生产），GNP 按<b>国民原则</b>（本国国民生产）；GNP = GDP + 来自国外的要素收入净额。<br>
+      <b>2.</b> 二手房本身<b>不计</b>（非当期生产，但<b>中介佣金计入</b>）；股票买卖<b>不计</b>（金融资产转移）；保姆工资<b>计入</b>（市场化服务）；养老金<b>不计</b>（转移支付）；存货增加<b>计入</b>（存货投资）。<br>
+      <b>3.</b> 5；−4；4；1。<br>
+      <b>4.</b> 政府购买直接形成需求；转移支付要先给居民，居民只花 β 部分，其余储蓄漏出。<br>
+      <b>5.</b> IS 向右<b>下</b>（β 大、d 大 → 越平缓）；LM 向右<b>上</b>（k 大越陡、h 大越平）。<br>
+      <b>6.</b> 流动性陷阱（LM 水平）：货币<b>无效</b>、财政<b>完全有效</b>；古典区域（LM 垂直）：财政<b>完全挤出无效</b>、货币<b>完全有效</b>。<br>
+      <b>7.</b> 政府支出推高利率、挤掉私人投资；<b>LM 垂直（古典情形）</b>时完全挤出。<br>
+      <b>8.</b> 价格 P 上升 → 实际货币供给 M/P 下降 → LM 左移 → 收入下降，把这些 (P, Y) 点连起来即 AD。<br>
+      <b>9.</b> 粘性工资、粘性价格、错觉理论；长期价格与工资充分调整、无错觉，产出回到潜在水平，故垂直。<br>
+      <b>10.</b> AS 左移 → 价涨量减＝<b>滞胀</b>；扩张会加剧通胀、紧缩会加剧衰退，故需求政策两难，只能辅以供给端政策。<br>
+      <b>11.</b> 失业率每高于自然率 1 个百分点，实际 GDP 约低于潜在 GDP 2%；长期 PC 是<b>过 u* 的垂线</b>（预期充分调整，通胀与失业无替代）。<br>
+      <b>12.</b> <b>固财浮货</b>：固定汇率下财政有效、货币无效；浮动汇率下货币有效、财政无效。三元悖论：资本自由流动、固定汇率、货币政策独立三者不可兼得。
+      </div>
+    </div></details>
+  </div>
+</div>
+</section>
+
+
+
+</div>
+
+<div class="btnbar">
+  <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">展开全部答案</button>
+  <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=false)">收起全部答案</button>
+  <button class="btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">回到顶部</button>
+</div>
+
+</body>
+</html>
